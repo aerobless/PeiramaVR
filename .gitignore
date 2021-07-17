@@ -58,3 +58,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Excluding third party assets & unnecessary unity internals
+/unity/PeiramaVR/Assets/ThirdParty/*
+/unity/PeiramaVR/Library/*
+/unity/PeiramaVR/Logs/*
+/unity/PeiramaVR/Temp/*
