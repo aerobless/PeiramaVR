@@ -8,12 +8,13 @@ using UnityEngine;
 public class VelocityBasedSoundEffect : MonoBehaviour
 {
     private Rigidbody _rigidbody;
-
-    // The amount of velocity that needs to be reached before a sound plays
+    
+    [Tooltip("The amount of velocity that needs to be reached before a sound plays")]
     public float velocityThreshold;
+    
     public AudioSource audioSource;
     
-    // Stop playing the audio if on the next update the velocity drops below the threshold
+    [Tooltip("Stop playing the audio if on the next update the velocity drops below the threshold")]
     public bool stopIfVelocityDrops;
     
     // Start is called before the first frame update

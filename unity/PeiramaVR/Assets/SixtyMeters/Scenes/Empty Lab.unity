@@ -2914,11 +2914,6 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.47893697
       objectReference: {fileID: 0}
-    - target: {fileID: 4233936641644844226, guid: b16b00df44a081e42819a7625ab8cbf4,
-        type: 3}
-      propertyPath: velocityThreshold
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b16b00df44a081e42819a7625ab8cbf4, type: 3}
 --- !u!1001 &4976245090184932728
