@@ -15,6 +15,9 @@ GameObject:
   - component: {fileID: 5826537319959290928}
   - component: {fileID: 3804615234497477841}
   - component: {fileID: 2519313629679201883}
+  - component: {fileID: 1396959524620794710}
+  - component: {fileID: 5330265289088584846}
+  - component: {fileID: 8804687764527881217}
   m_Layer: 0
   m_Name: bottle (breakable)
   m_TagString: Untagged
@@ -105,7 +108,7 @@ MonoBehaviour:
   ThresholdMet:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3804615234497477841}
         m_TargetAssemblyTypeName: HurricaneVR.Framework.Components.HVRDestructible,
           HurricaneVR.Framework
         m_MethodName: Destroy
@@ -171,7 +174,7 @@ MonoBehaviour:
   CanJointBreak: 0
   JointBreakForce: 2000
   JointBreakTorque: 2000
-  HandGrabbedClip: {fileID: 0}
+  HandGrabbedClip: {fileID: 8300000, guid: d3e02ab47c80d784bbe4f4070fb24cf8, type: 3}
   StartingSocket: {fileID: 0}
   LinkStartingSocket: 0
   AutoApplyLayer: 1
@@ -245,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f0a0ab295247a681b1b569944a2bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroyedVersion: {fileID: 4532792582996649987, guid: ad71ca1ed975f2347937633320f60b56,
+  DestroyedVersion: {fileID: 4953257885331431553, guid: 739359599f045064d881440ca2b63a79,
     type: 3}
   ExplosionRadius: 0.1
   ExplosionPower: 5
@@ -269,3 +272,46 @@ MonoBehaviour:
   Life: 10
   Damageable: 1
   Desctructible: {fileID: 0}
+--- !u!54 &1396959524620794710
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350975603828723879}
+  serializedVersion: 2
+  m_Mass: 0.5
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &5330265289088584846
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350975603828723879}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0545005, y: 1.2988513, z: 0.33916825}
+  m_Center: {x: -0.010208862, y: -0.02534265, z: -2.6246777}
+--- !u!136 &8804687764527881217
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350975603828723879}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.0045379
+  m_Height: 3.8280053
+  m_Direction: 2
+  m_Center: {x: 0.00015705994, y: -0.0056755627, z: -0.5082784}
