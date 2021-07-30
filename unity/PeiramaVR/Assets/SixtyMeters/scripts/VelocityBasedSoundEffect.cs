@@ -13,6 +13,9 @@ public class VelocityBasedSoundEffect : MonoBehaviour
     public float velocityThreshold;
     public AudioSource audioSource;
     
+    // Stop playing the audio if on the next update the velocity drops below the threshold
+    public bool stopIfVelocityDrops;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,11 @@ public class VelocityBasedSoundEffect : MonoBehaviour
         if (_rigidbody.velocity.magnitude >= velocityThreshold && !audioSource.isPlaying)
         {
             audioSource.Play();
+        }
+
+        if (audioSource.isPlaying && stopIfVelocityDrops && _rigidbody.velocity.magnitude < velocityThreshold)
+        { // e.g. stops a door from creaking when it's no longer being moved
+            audioSource.Stop();
         }
     }
 }
