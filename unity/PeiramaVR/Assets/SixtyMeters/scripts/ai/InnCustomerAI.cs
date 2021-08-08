@@ -67,18 +67,24 @@ namespace SixtyMeters.scripts.ai
 
             if (_currentState == InnCustomerState.FollowPath)
             {
-                _navMeshAgent.SetDestination(_nextTarget.transform.position);
                 _animator.SetBool("Walk", true);
+                
+                if (targetReached())
+                {
+                    NextPathStep();
+                }
             }
+            
 
-            if (targetReached() && _currentState == InnCustomerState.FollowPath)
-            {
-                NextPathStep();
-            }
+            //Check if npc should do something new, can probably be moved into idle state later
+            idleCheck();
+        }
 
-            if (Time.time > _nextCheck)
+        private void idleCheck()
+        {
+            if (Time.time > _nextCheck && _currentState == InnCustomerState.Idle)
             {
-                NextCheckInSeconds(100);
+                NextCheckInSeconds(30);
                 FollowPath("ToCity");
             }
         }
@@ -95,6 +101,7 @@ namespace SixtyMeters.scripts.ai
             }
 
             _nextTarget = _destinations[_destination][_pathIndex];
+            _navMeshAgent.SetDestination(_nextTarget.transform.position);
         }
 
         private void NextPathStep()
@@ -105,6 +112,7 @@ namespace SixtyMeters.scripts.ai
             if (_destinations[_destination].Count > _pathIndex)
             {
                 _nextTarget = _destinations[_destination][_pathIndex];
+                _navMeshAgent.SetDestination(_nextTarget.transform.position);
             }
             else
             {
