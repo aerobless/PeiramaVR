@@ -3,6 +3,7 @@
     public enum InnCustomerState
     {
         FollowPath,
-        Idle
+        Idle,
+        FindPlaceToSit
     }
 }

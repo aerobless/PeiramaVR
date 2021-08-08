@@ -20,6 +20,9 @@ namespace SixtyMeters.scripts.ai
 
         public List<WayPointPath> wayPointPaths;
 
+        //Temporary marker for sitting spot, should be replaced with logic to choose from available seats
+        public WayPoint seatMarker;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -69,12 +72,23 @@ namespace SixtyMeters.scripts.ai
             {
                 _animator.SetBool("Walk", true);
                 
-                if (targetReached())
+                if (WayPointReached(1))
                 {
                     NextPathStep();
                 }
             }
-            
+
+            if (_currentState == InnCustomerState.FindPlaceToSit)
+            {
+                if (WayPointReached(0.5f))
+                {
+                    //TODO: sit down logic
+                    _animator.SetBool("Walk", false);
+                    _navMeshAgent.enabled = false; //TODO: remember to re-enable when standing up
+                    _animator.SetBool("SitOnBench", true);
+                    //_nextState = InnCustomerState.Idle;
+                }
+            }
 
             //Check if npc should do something new, can probably be moved into idle state later
             idleCheck();
@@ -85,8 +99,25 @@ namespace SixtyMeters.scripts.ai
             if (Time.time > _nextCheck && _currentState == InnCustomerState.Idle)
             {
                 NextCheckInSeconds(30);
-                FollowPath("ToCity");
+                //FollowPath("ToCity");
+                FindPlaceToSit();
             }
+        }
+
+        public void FindPlaceToSit()
+        {
+            //_navMeshAgent.enabled = false;
+            _nextState = InnCustomerState.FindPlaceToSit;
+            
+            //TODO: logic to choose a seat
+            WalkToTarget(seatMarker);
+        }
+
+        private void WalkToTarget(WayPoint wayPoint)
+        {
+            _nextTarget = wayPoint;
+            _navMeshAgent.SetDestination(_nextTarget.transform.position);
+            _animator.SetBool("Walk", true);
         }
 
         public void FollowPath(string destination)
@@ -99,9 +130,8 @@ namespace SixtyMeters.scripts.ai
             {
                 Debug.Log("Destination " + destination + " does not exist!");
             }
-
-            _nextTarget = _destinations[_destination][_pathIndex];
-            _navMeshAgent.SetDestination(_nextTarget.transform.position);
+            
+            WalkToTarget(_destinations[_destination][_pathIndex]);
         }
 
         private void NextPathStep()
@@ -111,8 +141,7 @@ namespace SixtyMeters.scripts.ai
             
             if (_destinations[_destination].Count > _pathIndex)
             {
-                _nextTarget = _destinations[_destination][_pathIndex];
-                _navMeshAgent.SetDestination(_nextTarget.transform.position);
+                WalkToTarget(_destinations[_destination][_pathIndex]);
             }
             else
             {
@@ -120,11 +149,11 @@ namespace SixtyMeters.scripts.ai
             }
         }
 
-        private bool targetReached()
+        private bool WayPointReached(float distance)
         {
             if (_nextTarget != null)
             {
-                return Vector3.Distance(transform.position, _nextTarget.transform.position) <= 1;
+                return Vector3.Distance(transform.position, _nextTarget.transform.position) <= distance;
             }
             else
             {
