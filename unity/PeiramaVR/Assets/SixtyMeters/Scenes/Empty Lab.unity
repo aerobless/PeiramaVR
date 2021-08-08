@@ -28335,6 +28335,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 49.426, y: -41.127, z: -37.973}
+--- !u!4 &717079906 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3183891929913530249, guid: 058756f4965c0e64ab99f6c8e3065e10,
+    type: 3}
+  m_PrefabInstance: {fileID: 1488690226329779139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &720730620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44247,6 +44253,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86ca358ededaa4418c65937d46dfd28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2015117496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2015117497}
+  - component: {fileID: 2015117498}
+  m_Layer: 0
+  m_Name: 'LOGIC: item reach area'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2015117497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015117496}
+  m_LocalRotation: {x: -0.000000005391938, y: -0.000000014904284, z: 0.033394523,
+    w: 0.9994423}
+  m_LocalPosition: {x: -0.262, y: 0.427, z: -0}
+  m_LocalScale: {x: 0.46901914, y: 0.88362074, z: 0.6393201}
+  m_Children: []
+  m_Father: {fileID: 717079906}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.827}
+--- !u!114 &2015117498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015117496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df39c02fa73279644a858694fb9d19d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 1048576
+  continuousScanning: 1
 --- !u!1001 &2021798366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44352,7 +44406,7 @@ PrefabInstance:
     - target: {fileID: 2048545578049987669, guid: b932e0044500dee42b02b6a453d48af8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.107901
+      value: 6.212
       objectReference: {fileID: 0}
     - target: {fileID: 2048545578049987669, guid: b932e0044500dee42b02b6a453d48af8,
         type: 3}
