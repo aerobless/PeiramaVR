@@ -45,5 +45,6 @@ public class EquipmentManager : MonoBehaviour
         var npcItem = Instantiate(item, slot.transform, true);
         npcItem.transform.position = slot.transform.position;
         npcItem.GetComponent<Rigidbody>().isKinematic = true;
+        npcItem.transform.localRotation = Quaternion.Euler(npcItem.GetComponent<UsableByNpc>().rightHandRotation);
     }
 }

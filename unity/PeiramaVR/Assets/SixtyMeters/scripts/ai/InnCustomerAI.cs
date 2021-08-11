@@ -107,8 +107,7 @@ namespace SixtyMeters.scripts.ai
                     GetComponent<EquipmentManager>().EquipRightHand(closestMug);
                     Destroy(closestMug);
 
-                    _animator.SetBool("SitOnBench", false);
-                    _nextState = InnCustomerState.Idle; //TODO: remove me
+                    _animator.SetBool("Drink", true);
                 }
             }
 
