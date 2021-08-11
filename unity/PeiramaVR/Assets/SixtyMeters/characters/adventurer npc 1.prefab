@@ -2778,6 +2778,7 @@ Transform:
   - {fileID: 3183519036183207643}
   - {fileID: 3183507420570079601}
   - {fileID: 3183612237280467617}
+  - {fileID: 5945765807259272793}
   m_Father: {fileID: 3184099643577256723}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3355,6 +3356,7 @@ GameObject:
   - component: {fileID: 3293887131720823417}
   - component: {fileID: 3181516386770058230}
   - component: {fileID: 3181516386770058229}
+  - component: {fileID: 5925494977082507309}
   m_Layer: 0
   m_Name: adventurer npc 1
   m_TagString: Untagged
@@ -3477,8 +3479,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e213acc77ab914747b13a118efca5948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoint1: {fileID: 0}
-  waypoint2: {fileID: 0}
+  leftHand: {fileID: 3180242657345042925}
+  rightHand: {fileID: 3181144547657834105}
+  wayPointPaths:
+  - {fileID: 0}
+  seatMarker: {fileID: 0}
+--- !u!114 &5925494977082507309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3181516386770058231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41685f47c4bee7c4486527255829f34a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxFoodInStomach: 100
+  maxDrinksInStomach: 100
+  currentFoodInStomach: 0
+  currentDrinksInStomach: 0
 --- !u!1 &3181519766698379287
 GameObject:
   m_ObjectHideFlags: 0
@@ -4431,4 +4452,34 @@ Transform:
   - {fileID: 3183795096316484283}
   m_Father: {fileID: 3183742323306706057}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4214321431640976179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5945765807259272793}
+  m_Layer: 0
+  m_Name: Right Grip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5945765807259272793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4214321431640976179}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3183634936797115177}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

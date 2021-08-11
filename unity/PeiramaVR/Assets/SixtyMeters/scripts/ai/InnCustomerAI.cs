@@ -1,5 +1,8 @@
 using System.Collections.Generic;
+using HurricaneVR.Framework.Core;
+using HurricaneVR.Framework.Core.Utils;
 using SixtyMeters.scripts.helpers;
+using SixtyMeters.scripts.items;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -19,6 +22,8 @@ namespace SixtyMeters.scripts.ai
         private string _destination;
 
         public List<WayPointPath> wayPointPaths;
+
+        public GameObject dummyObject;
 
         //Temporary marker for sitting spot, should be replaced with logic to choose from available seats
         public WayPoint seatMarker;
@@ -71,7 +76,7 @@ namespace SixtyMeters.scripts.ai
             if (_currentState == InnCustomerState.FollowPath)
             {
                 _animator.SetBool("Walk", true);
-                
+
                 if (WayPointReached(1))
                 {
                     NextPathStep();
@@ -86,7 +91,24 @@ namespace SixtyMeters.scripts.ai
                     _animator.SetBool("Walk", false);
                     _navMeshAgent.enabled = false; //TODO: remember to re-enable when standing up
                     _animator.SetBool("SitOnBench", true);
-                    //_nextState = InnCustomerState.Idle;
+                    _nextState = InnCustomerState.SittingInInn;
+                }
+            }
+
+            if (_currentState == InnCustomerState.SittingInInn)
+            {
+                //TODO: reduce rate of searching for a mug
+                var closestMug = gameObject.GetComponentInChildren<DetectItems>().GetClosestItemOfType<UsableByNpc>();
+                if (closestMug != null)
+                {
+                    closestMug.GetRigidbody().isKinematic = true;
+                    closestMug.GetComponent<HVRGrabbable>().enabled = false;
+                    closestMug.GetComponent<MeshCollider>().enabled = false;
+                    GetComponent<EquipmentManager>().EquipRightHand(closestMug);
+                    Destroy(closestMug);
+
+                    _animator.SetBool("SitOnBench", false);
+                    _nextState = InnCustomerState.Idle; //TODO: remove me
                 }
             }
 
@@ -108,7 +130,7 @@ namespace SixtyMeters.scripts.ai
         {
             //_navMeshAgent.enabled = false;
             _nextState = InnCustomerState.FindPlaceToSit;
-            
+
             //TODO: logic to choose a seat
             WalkToTarget(seatMarker);
         }
@@ -130,15 +152,15 @@ namespace SixtyMeters.scripts.ai
             {
                 Debug.Log("Destination " + destination + " does not exist!");
             }
-            
+
             WalkToTarget(_destinations[_destination][_pathIndex]);
         }
 
         private void NextPathStep()
         {
             _pathIndex += 1;
-            Debug.Log("NextPathStep "+_pathIndex);
-            
+            Debug.Log("NextPathStep " + _pathIndex);
+
             if (_destinations[_destination].Count > _pathIndex)
             {
                 WalkToTarget(_destinations[_destination][_pathIndex]);

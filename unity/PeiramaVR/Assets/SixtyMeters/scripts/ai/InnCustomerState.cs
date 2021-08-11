@@ -4,6 +4,7 @@
     {
         FollowPath,
         Idle,
-        FindPlaceToSit
+        FindPlaceToSit,
+        SittingInInn
     }
 }
