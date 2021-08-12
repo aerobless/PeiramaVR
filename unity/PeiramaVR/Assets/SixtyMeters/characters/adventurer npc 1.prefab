@@ -3357,6 +3357,8 @@ GameObject:
   - component: {fileID: 3181516386770058230}
   - component: {fileID: 3181516386770058229}
   - component: {fileID: 5925494977082507309}
+  - component: {fileID: 6071822157714040692}
+  - component: {fileID: 1335783517275099584}
   m_Layer: 0
   m_Name: adventurer npc 1
   m_TagString: Untagged
@@ -3479,10 +3481,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e213acc77ab914747b13a118efca5948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHand: {fileID: 3180242657345042925}
-  rightHand: {fileID: 3181144547657834105}
   wayPointPaths:
   - {fileID: 0}
+  dummyObject: {fileID: 0}
   seatMarker: {fileID: 0}
 --- !u!114 &5925494977082507309
 MonoBehaviour:
@@ -3500,6 +3501,35 @@ MonoBehaviour:
   maxDrinksInStomach: 100
   currentFoodInStomach: 0
   currentDrinksInStomach: 0
+--- !u!114 &6071822157714040692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3181516386770058231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6dc3f0dc7e2d34fb2ab517f19ff4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHand: {fileID: 4214321431640976179}
+  rightHand: {fileID: 4214321431640976179}
+--- !u!114 &1335783517275099584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3181516386770058231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34dab82baeb427c43b0d6581257e14f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ikActive: 1
+  rightHandObj: {fileID: 0}
+  lookObj: {fileID: 0}
 --- !u!1 &3181519766698379287
 GameObject:
   m_ObjectHideFlags: 0
