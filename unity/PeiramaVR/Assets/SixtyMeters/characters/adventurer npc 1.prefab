@@ -3359,6 +3359,7 @@ GameObject:
   - component: {fileID: 5925494977082507309}
   - component: {fileID: 6071822157714040692}
   - component: {fileID: 1335783517275099584}
+  - component: {fileID: 8957898798623747756}
   m_Layer: 0
   m_Name: adventurer npc 1
   m_TagString: Untagged
@@ -3530,6 +3531,77 @@ MonoBehaviour:
   ikActive: 1
   rightHandObj: {fileID: 0}
   lookObj: {fileID: 0}
+--- !u!114 &8957898798623747756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3181516386770058231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
+  m_Transforms:
+  - {fileID: 3183881265942953915}
+  - {fileID: 3184035725018762417}
+  - {fileID: 3183563665593980497}
+  - {fileID: 3183645178874730563}
+  - {fileID: 3183812726171976757}
+  - {fileID: 3184353824449123261}
+  - {fileID: 3184395146220340719}
+  - {fileID: 3183985219815162313}
+  - {fileID: 3184524834273883779}
+  - {fileID: 3183891929913530249}
+  - {fileID: 3183491852060049023}
+  - {fileID: 3184049994470035871}
+  - {fileID: 3184429260593074661}
+  - {fileID: 3184180494501086449}
+  - {fileID: 3183575333334225271}
+  - {fileID: 3184443704182775823}
+  - {fileID: 3183827415809321415}
+  - {fileID: 3184214639237612625}
+  - {fileID: 3183801117279992469}
+  - {fileID: 3184090765967842415}
+  - {fileID: 3184376541996514273}
+  - {fileID: 3184342309411651527}
+  - {fileID: 3183742323306706057}
+  - {fileID: 3183787280545502737}
+  - {fileID: 3183624012158058997}
+  - {fileID: 3183868705453139395}
+  - {fileID: 3184605425635562219}
+  - {fileID: 3184436612934424765}
+  - {fileID: 3184101618447545745}
+  - {fileID: 3183825144667269423}
+  - {fileID: 3183497480824919289}
+  - {fileID: 3184355226715996015}
+  - {fileID: 3184368691944792751}
+  - {fileID: 3184503018419446669}
+  - {fileID: 3184056643089308859}
+  - {fileID: 3184099643577256723}
+  - {fileID: 3183634936797115177}
+  - {fileID: 3183576243225166215}
+  - {fileID: 3184004009000484265}
+  - {fileID: 3184062678954253919}
+  - {fileID: 3184488342577717549}
+  - {fileID: 3184529857060221729}
+  - {fileID: 3183529126176298255}
+  - {fileID: 3183644198811016245}
+  - {fileID: 3184494349128440369}
+  - {fileID: 3183877892593568157}
+  - {fileID: 3183519036183207643}
+  - {fileID: 3183573989026630949}
+  - {fileID: 3183489517886991461}
+  - {fileID: 3183507420570079601}
+  - {fileID: 3183812954992902021}
+  - {fileID: 3184605245901311831}
 --- !u!1 &3181519766698379287
 GameObject:
   m_ObjectHideFlags: 0

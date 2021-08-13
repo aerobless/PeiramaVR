@@ -121,7 +121,7 @@ namespace SixtyMeters.scripts.ai
             {
                 NextCheckInSeconds(30);
                 //FollowPath("ToCity");
-                FindPlaceToSit();
+                //FindPlaceToSit();
             }
         }
 
