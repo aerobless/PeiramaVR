@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using HurricaneVR.Framework.Core;
 using HurricaneVR.Framework.Core.Utils;
@@ -12,6 +13,8 @@ namespace SixtyMeters.scripts.ai
     {
         private Animator _animator;
         private NavMeshAgent _navMeshAgent;
+        private IkControl _ikControl;
+        
         private float _nextCheck;
         private WayPoint _nextTarget;
         private Dictionary<string, List<WayPoint>> _destinations = new Dictionary<string, List<WayPoint>>();
@@ -33,6 +36,8 @@ namespace SixtyMeters.scripts.ai
         {
             _animator = GetComponent<Animator>();
             _navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
+            _ikControl = gameObject.GetComponent<IkControl>();
+            
             _nextCheck = Time.time;
             _navMeshAgent.updatePosition = false;
             _navMeshAgent.updateRotation = true;
@@ -99,20 +104,21 @@ namespace SixtyMeters.scripts.ai
             {
                 //TODO: reduce rate of searching for a mug
                 var closestMug = gameObject.GetComponentInChildren<DetectItems>().GetClosestItemOfType<UsableByNpc>();
-                if (closestMug != null)
+                if (closestMug != null && closestMug.GetComponent<UsableByNpc>().isEquipped == false)
                 {
-                    closestMug.GetRigidbody().isKinematic = true;
-                    closestMug.GetComponent<HVRGrabbable>().enabled = false;
-                    closestMug.GetComponent<MeshCollider>().enabled = false;
                     GetComponent<EquipmentManager>().EquipRightHand(closestMug);
-                    Destroy(closestMug);
-
-                    _animator.SetBool("Drink", true);
+                    StartCoroutine(StartDrinking());
                 }
             }
 
             //Check if npc should do something new, can probably be moved into idle state later
             idleCheck();
+        }
+        
+        IEnumerator StartDrinking()
+        {
+            yield return new WaitForSeconds(10);
+            _animator.SetBool("Drink", true);
         }
 
         private void idleCheck()
@@ -121,7 +127,7 @@ namespace SixtyMeters.scripts.ai
             {
                 NextCheckInSeconds(30);
                 //FollowPath("ToCity");
-                //FindPlaceToSit();
+                FindPlaceToSit();
             }
         }
 

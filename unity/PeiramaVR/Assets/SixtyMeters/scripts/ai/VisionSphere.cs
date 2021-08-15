@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using HurricaneVR.Framework.Core.Utils;
+using SixtyMeters.scripts.items;
 using UnityEngine;
 
 public class VisionSphere : MonoBehaviour
@@ -26,34 +27,41 @@ public class VisionSphere : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Collider[] colliders = Physics.OverlapSphere(headTransform.position + transform.forward, visionRadius);
-
-        _pointOfInterest = null;
-
-        foreach (var collider in colliders)
+        if (headTransform)
         {
-            if (collider.GetComponent<PointOfInterest>())
+            Collider[] colliders = Physics.OverlapSphere(headTransform.position + transform.forward, visionRadius);
+
+            _pointOfInterest = null;
+
+            foreach (var collider in colliders)
             {
-                _pointOfInterest = collider.GetComponent<PointOfInterest>();
-                break;
+                if (collider.GetComponent<PointOfInterest>())
+                {
+                    if (!(collider.GetComponent<UsableByNpc>() && collider.GetComponent<UsableByNpc>().isEquipped))
+                    {
+                        _pointOfInterest = collider.GetComponent<PointOfInterest>();
+                        break;
+                    }
+                }
             }
-        }
 
-        Vector3 targetPosition;
-        float speed = lerpSpeed / 10;
-        if (_pointOfInterest != null)
-        {
-            _ikControl.headIkActive = true;
-            targetPosition = _pointOfInterest.transform.position;
+            Vector3 targetPosition;
+            float speed = lerpSpeed / 10;
+            if (_pointOfInterest != null)
+            {
+                _ikControl.headIkActive = true;
+                targetPosition = _pointOfInterest.transform.position;
 
-            aimTargetTransform.position =
-                Vector3.Lerp(aimTargetTransform.position, targetPosition, Time.deltaTime * speed);
-        }
-        else
-        {
-            aimTargetTransform.position =
-                Vector3.Lerp(aimTargetTransform.position, headTransformDefault.transform.position, Time.deltaTime * speed);
-            StartCoroutine(TurnOffHeadIk());
+                aimTargetTransform.position =
+                    Vector3.Lerp(aimTargetTransform.position, targetPosition, Time.deltaTime * speed);
+            }
+            else
+            {
+                aimTargetTransform.position =
+                    Vector3.Lerp(aimTargetTransform.position, headTransformDefault.transform.position,
+                        Time.deltaTime * speed);
+                StartCoroutine(TurnOffHeadIk());
+            }
         }
     }
 
@@ -70,6 +78,9 @@ public class VisionSphere : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(headTransform.position + transform.forward, visionRadius);
+        if (headTransform)
+        {
+            Gizmos.DrawWireSphere(headTransform.position + transform.forward, visionRadius);
+        }
     }
 }
