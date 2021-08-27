@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class BeerLever : MonoBehaviour
 {
-
     public ParticleSystem beerParticles;
+    public AudioSource pouringSound;
 
     public bool isDispensing = false;
 
     private HVRRotationTracker _rotationTracker;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +24,18 @@ public class BeerLever : MonoBehaviour
         if (_rotationTracker.ClampedAngle > 120f)
         {
             beerParticles.Play();
+
+            if (!pouringSound.isPlaying)
+            {
+                pouringSound.Play();
+            }
+
             isDispensing = true;
         }
         else
         {
             beerParticles.Stop();
+            pouringSound.Stop();
             isDispensing = false;
         }
     }

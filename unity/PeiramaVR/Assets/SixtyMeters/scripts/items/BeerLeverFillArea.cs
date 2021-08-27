@@ -4,17 +4,16 @@ namespace SixtyMeters.scripts.items
 {
     public class BeerLeverFillArea : MonoBehaviour
     {
-
         public BeerLever lever;
-        
+
         private float _fillingTimePassed;
         private Mug _mug;
 
         private float fillIncrement = 0.1f;
+
         // Start is called before the first frame update
         void Start()
         {
-        
         }
 
         // Update is called once per frame
@@ -30,7 +29,7 @@ namespace SixtyMeters.scripts.items
                 }
             }
         }
-    
+
         void OnTriggerEnter(Collider col)
         {
             if (IsMug(col))
@@ -38,7 +37,7 @@ namespace SixtyMeters.scripts.items
                 _mug = col.gameObject.GetComponent<Mug>();
             }
         }
-    
+
         void OnTriggerExit(Collider col)
         {
             if (IsMug(col))
@@ -46,7 +45,7 @@ namespace SixtyMeters.scripts.items
                 _mug = null;
             }
         }
-    
+
         private static bool IsMug(Collider col)
         {
             return col.gameObject.GetComponent<Mug>() != null;
