@@ -13,7 +13,7 @@ public class VelocityBasedSoundEffect : MonoBehaviour
     public float velocityThreshold;
     
     public AudioSource audioSource;
-    
+
     [Tooltip("Stop playing the audio if on the next update the velocity drops below the threshold")]
     public bool stopIfVelocityDrops;
     
