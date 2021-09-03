@@ -30,6 +30,7 @@ namespace SixtyMeters.scripts.ai.slime
         // Update is called once per frame
         void Update()
         {
+            //TODO: rate limit check & runaway
             float dist = Vector3.Distance(transform.position, _runAwayFrom.transform.position);
             if(dist < fearDistance)
             {
