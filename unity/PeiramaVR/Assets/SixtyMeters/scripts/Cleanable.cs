@@ -11,10 +11,12 @@ public class Cleanable : MonoBehaviour
 	private bool _isCleaning;
 	private Cleaner _cleaner;
 	
+	private Material _material;
+
 	// Start is called before the first frame update
     void Start()
     {
-	    
+	    _material = GetComponentInParent<MeshRenderer>().material;
     }
 
     // Update is called once per frame
@@ -23,18 +25,20 @@ public class Cleanable : MonoBehaviour
 	    if (_isCleaning)
 	    {
 		    _timePassedInCleaningCycle += Time.deltaTime;
+		    var lerpTime = _timePassedInCleaningCycle / secondsUntilClean;
+		    SetAlpha(Mathf.Lerp(1, 0.4f,lerpTime), _material);
 	    }
 	    
 	    if (_timePassedInCleaningCycle >= secondsUntilClean)
 	    {
 		    _cleaner.cleaningEffect.Stop();
-		    Destroy(this.transform.parent.gameObject);
+		    Destroy(transform.parent.gameObject);
 	    }
     }
     
     void OnTriggerEnter(Collider col)
     {
-	    if (isCleaner(col))
+	    if (IsCleaner(col))
 	    {
 		    _cleaner = col.gameObject.GetComponent<Cleaner>();
 		    _cleaner.cleaningEffect.Play();
@@ -42,14 +46,21 @@ public class Cleanable : MonoBehaviour
 	    }
     }
 
-    private static bool isCleaner(Collider col)
+    private void SetAlpha(float alpha, Material material)
+    {
+	    var color = material.color;
+	    color.a = Mathf.Clamp( alpha, 0, 1 );
+	    material.color = color;
+    }
+    
+    private static bool IsCleaner(Collider col)
     {
 	    return col.gameObject.GetComponent<Cleaner>() != null;
     }
 
     void OnTriggerExit(Collider col)
     {
-	    if (isCleaner(col))
+	    if (IsCleaner(col))
 	    {
 		    col.gameObject.GetComponent<Cleaner>().cleaningEffect.Stop();
 		    _timePassedInCleaningCycle = 0;

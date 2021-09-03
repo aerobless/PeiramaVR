@@ -1,80 +1,81 @@
 using UnityEngine;
 
-public class DetectItems : MonoBehaviour
+namespace SixtyMeters.scripts.ai
 {
-    bool m_Started;
-    public LayerMask m_LayerMask;
-
-    public bool continuousScanning;
-
-    void Start()
+    public class DetectItems : MonoBehaviour
     {
-        //Use this to ensure that the Gizmos are being drawn when in Play Mode.
-        m_Started = true;
-    }
+        public LayerMask mLayerMask;
 
-    void FixedUpdate()
-    {
-        if (continuousScanning)
+        public bool continuousScanning;
+
+        void Start()
         {
-            GetCollisions(true);
-        }
-    }
 
-    /**
+        }
+
+        void FixedUpdate()
+        {
+            if (continuousScanning)
+            {
+                GetCollisions(true);
+            }
+        }
+
+        /**
      * Returns GameObject if found, otherwise null
      */
-    public GameObject GetClosestItemOfType<T>()
-    {
-        var colliders = GetCollisions(false);
-
-        GameObject closestGameObjectOfType = null;
-        float distanceToClosestCollider = 1000;
-        
-        foreach (var coll in colliders)
+        public GameObject GetClosestItemOfType<T>()
         {
-            //Verify type
-            var component = coll.gameObject.GetComponent<T>();
-            if (component != null)
+            var colliders = GetCollisions(false);
+
+            GameObject closestGameObjectOfType = null;
+            float distanceToClosestCollider = 1000;
+        
+            foreach (var coll in colliders)
             {
-                //Verify distance to existing closest collider of type
-                var distance = Vector3.Distance(transform.position, coll.transform.position);
-                if(distanceToClosestCollider > distance)
+                //Verify type
+                var component = coll.gameObject.GetComponent<T>();
+                if (component != null)
                 {
-                    closestGameObjectOfType = coll.gameObject;
-                    distanceToClosestCollider = distance;
-                }    
+                    //Verify distance to existing closest collider of type
+                    var distance = Vector3.Distance(transform.position, coll.transform.position);
+                    if(distanceToClosestCollider > distance)
+                    {
+                        closestGameObjectOfType = coll.gameObject;
+                        distanceToClosestCollider = distance;
+                    }    
+                }
             }
-        }
 
-        return closestGameObjectOfType;
-    }
+            return closestGameObjectOfType;
+        }
     
-    Collider[] GetCollisions(bool printToLog)
-    {
-        //Use the OverlapBox to detect if there are any other colliders within this box area.
-        Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, gameObject.transform.rotation, m_LayerMask);
+        Collider[] GetCollisions(bool printToLog)
+        {
+            //Use the OverlapBox to detect if there are any other colliders within this box area.
+            Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, gameObject.transform.rotation, mLayerMask);
         
 
-        if (printToLog)
-        {
-            foreach (var hitCollider in hitColliders)
+            if (printToLog)
             {
-                Debug.Log("Hit : " +hitCollider.name);
+                foreach (var hitCollider in hitColliders)
+                {
+                    Debug.Log("Hit : " +hitCollider.name);
+                }
             }
+
+            return hitColliders;
         }
 
-        return hitColliders;
-    }
+        //Fyi: Actual range is slightly wider than drawn by gizmo
+        void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.matrix = transform.localToWorldMatrix;
 
-    //Fyi: Actual range is slightly wider than drawn by gizmo
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.matrix = transform.localToWorldMatrix;
-
-        // convert from world position to local position 
-        Vector3 boxPosition = transform.InverseTransformPoint(transform.position);
-        Gizmos.DrawWireCube (boxPosition, transform.localScale);
+            // convert from world position to local position 
+            Vector3 boxPosition = transform.InverseTransformPoint(transform.position);
+            Gizmos.DrawWireCube (boxPosition, transform.localScale);
+        }
     }
 }
