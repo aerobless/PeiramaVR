@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Mug : MonoBehaviour
@@ -10,33 +8,39 @@ public class Mug : MonoBehaviour
     public ParticleSystem beerParticles;
     public GameObject drinkContent;
     private MeshRenderer _drinkContentMesh;
+    private Transform _drinkingMeshTransform;
+
+    private const float FillingStartPos = -0.0771f;
+    private const float FillingEndPos = 0.0876f;
 
     // Start is called before the first frame update
     void Start()
     {
         _drinkContentMesh = drinkContent.GetComponent<MeshRenderer>();
+        _drinkingMeshTransform = drinkContent.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (fillContent >= 100)
+        if (fillContent <= 0)
         {
-            beerParticles.Play();
-            _drinkContentMesh.enabled = true;
+            _drinkContentMesh.enabled = false;
         }
         else
         {
-            beerParticles.Stop();
-            _drinkContentMesh.enabled = false;
+            _drinkContentMesh.enabled = true;
         }
     }
 
     public void FillMugByIncrement()
     {
-        if (fillContent <= 100)
+        if (fillContent < 100)
         {
             fillContent += 1;
+            var fillingLerp = Mathf.Lerp(FillingStartPos, FillingEndPos,fillContent/100f);
+            var fillingPos = _drinkingMeshTransform.localPosition;
+            _drinkingMeshTransform.localPosition = new Vector3(fillingPos.x, fillingPos.y, fillingLerp);
         }
     }
 }

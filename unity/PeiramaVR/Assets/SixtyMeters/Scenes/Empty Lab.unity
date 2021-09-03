@@ -75818,11 +75818,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.00000009035841
       objectReference: {fileID: 0}
-    - target: {fileID: 3237129775628255402, guid: 058756f4965c0e64ab99f6c8e3065e10,
-        type: 3}
-      propertyPath: visionRadius
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3275160602962823973, guid: 058756f4965c0e64ab99f6c8e3065e10,
         type: 3}
       propertyPath: m_WarningMessage
@@ -75916,11 +75911,6 @@ PrefabInstance:
     - target: {fileID: 6264540531265193889, guid: 058756f4965c0e64ab99f6c8e3065e10,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8421412120786462617, guid: 058756f4965c0e64ab99f6c8e3065e10,
-        type: 3}
-      propertyPath: continuousScanning
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8957898798623747756, guid: 058756f4965c0e64ab99f6c8e3065e10,

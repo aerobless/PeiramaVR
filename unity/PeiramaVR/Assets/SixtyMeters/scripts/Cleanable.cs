@@ -12,11 +12,13 @@ public class Cleanable : MonoBehaviour
 	private Cleaner _cleaner;
 	
 	private Material _material;
+	private AudioSource _audioSource;
 
 	// Start is called before the first frame update
     void Start()
     {
 	    _material = GetComponentInParent<MeshRenderer>().material;
+	    _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,10 @@ public class Cleanable : MonoBehaviour
 		    _timePassedInCleaningCycle += Time.deltaTime;
 		    var lerpTime = _timePassedInCleaningCycle / secondsUntilClean;
 		    SetAlpha(Mathf.Lerp(1, 0.4f,lerpTime), _material);
+		    if (!_audioSource.isPlaying)
+		    {
+			    _audioSource.Play();
+		    }
 	    }
 	    
 	    if (_timePassedInCleaningCycle >= secondsUntilClean)
@@ -65,6 +71,7 @@ public class Cleanable : MonoBehaviour
 		    col.gameObject.GetComponent<Cleaner>().cleaningEffect.Stop();
 		    _timePassedInCleaningCycle = 0;
 		    _isCleaning = false;
+		    _audioSource.Stop();
 	    }
     }
 }

@@ -3629,7 +3629,7 @@ MonoBehaviour:
   headTransform: {fileID: 3184368691944792751}
   headTransformDefault: {fileID: 5814912580825969939}
   aimTargetTransform: {fileID: 3735189658594086910}
-  visionRadius: 1.7
+  visionRadius: 2
   lerpSpeed: 10
 --- !u!1 &3181519766698379287
 GameObject:
@@ -4779,10 +4779,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df39c02fa73279644a858694fb9d19d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LayerMask:
+  mLayerMask:
     serializedVersion: 2
     m_Bits: 1048576
-  continuousScanning: 1
+  continuousScanning: 0
 --- !u!1 &7051891619135734212
 GameObject:
   m_ObjectHideFlags: 0
