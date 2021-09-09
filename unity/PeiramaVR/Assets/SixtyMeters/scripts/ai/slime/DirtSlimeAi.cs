@@ -16,11 +16,12 @@ namespace SixtyMeters.scripts.ai.slime
         public float randomMovementDistance = 3;
         public AudioSource soundEffects;
         public AudioClip hurtSound;
+        public ParticleSystem hurtEffect;
         
         public int healthPoints = 5;
 
         private static readonly Vector3 DefaultScale = new Vector3(0.16343f, 0.16343f, 0.16343f);
-        private static readonly Vector3 ScaleReductionVector = new Vector3(0.01f, 0.01f, 0.01f);
+        private static readonly Vector3 ScaleReductionVector = new Vector3(0.02f, 0.02f, 0.02f);
 
 
         // Start is called before the first frame update
@@ -61,7 +62,7 @@ namespace SixtyMeters.scripts.ai.slime
 
             if (healthPoints <= 0)
             {
-                Destroy(gameObject);
+                Destroy(gameObject, 2);
             }
         }
 
@@ -115,6 +116,7 @@ namespace SixtyMeters.scripts.ai.slime
             healthPoints -= 1;
             transform.localScale -= ScaleReductionVector;
             soundEffects.PlayOneShot(hurtSound);
+            hurtEffect.Play();
         }
     }
 }
