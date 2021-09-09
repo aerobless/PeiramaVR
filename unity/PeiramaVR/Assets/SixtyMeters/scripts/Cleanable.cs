@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Cleanable : MonoBehaviour
 {
 
 	public int secondsUntilClean;
+	public bool spawnCreatureOnClean;
+	public GameObject spawnableCreature;
+	public GameObject spawnPoint;
 
 	private float _timePassedInCleaningCycle;
 	private bool _isCleaning;
@@ -46,6 +47,13 @@ public class Cleanable : MonoBehaviour
     {
 	    if (IsCleaner(col))
 	    {
+
+		    if (spawnCreatureOnClean)
+		    {
+			    spawnCreatureOnClean = false;
+			    Instantiate(spawnableCreature, spawnPoint.transform.position, spawnPoint.transform.rotation);
+		    }
+		    
 		    _cleaner = col.gameObject.GetComponent<Cleaner>();
 		    _cleaner.cleaningEffect.Play();
 		    _isCleaning = true;

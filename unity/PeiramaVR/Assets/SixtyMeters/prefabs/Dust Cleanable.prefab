@@ -59,6 +59,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsUntilClean: 5
+  spawnCreatureOnClean: 1
+  spawnableCreature: {fileID: 5944687635723979065, guid: 6b39ed593ca5dd64a95cbcb482c2e021,
+    type: 3}
+  spawnPoint: {fileID: 3985019699165495581}
 --- !u!82 &5776656565037931101
 AudioSource:
   m_ObjectHideFlags: 0
@@ -155,6 +159,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &3985019699165495581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5381060710356949223}
+  m_Layer: 0
+  m_Name: CreatureSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5381060710356949223
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3985019699165495581}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.086, y: -0.286, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5180657857778282163}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5180657857778053779
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +219,7 @@ Transform:
   m_LocalScale: {x: 0.80172, y: 0.80172, z: 0.80172}
   m_Children:
   - {fileID: 6609855834049706712}
+  - {fileID: 5381060710356949223}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
