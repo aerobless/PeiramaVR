@@ -14,6 +14,13 @@ namespace SixtyMeters.scripts.ai.slime
 
         public float fearMovementDistance = 2;
         public float randomMovementDistance = 3;
+        public AudioSource soundEffects;
+        public AudioClip hurtSound;
+        
+        public int healthPoints = 5;
+
+        private static readonly Vector3 DefaultScale = new Vector3(0.16343f, 0.16343f, 0.16343f);
+        private static readonly Vector3 ScaleReductionVector = new Vector3(0.01f, 0.01f, 0.01f);
 
 
         // Start is called before the first frame update
@@ -51,6 +58,11 @@ namespace SixtyMeters.scripts.ai.slime
 
                 _nextMovementCheck = Time.time + RateLimit;
             }
+
+            if (healthPoints <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
 
         private void RunAwayFromBroom()
@@ -83,6 +95,26 @@ namespace SixtyMeters.scripts.ai.slime
             
             // And get it to head towards the found NavMesh position
             _navMeshAgent.SetDestination(hit.position);
+        }
+        
+        void OnTriggerEnter(Collider col)
+        {
+            if (IsCleaner(col))
+            {
+                HurtSlime();
+            }
+        }
+        
+        private static bool IsCleaner(Collider col)
+        {
+            return col.gameObject.GetComponent<Cleaner>() != null;
+        }
+
+        private void HurtSlime()
+        {
+            healthPoints -= 1;
+            transform.localScale -= ScaleReductionVector;
+            soundEffects.PlayOneShot(hurtSound);
         }
     }
 }
