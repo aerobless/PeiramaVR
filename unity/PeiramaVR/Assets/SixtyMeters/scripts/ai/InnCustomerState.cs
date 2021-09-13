@@ -5,6 +5,7 @@
         FollowPath,
         Idle,
         FindPlaceToSit,
-        SittingInInn
+        SittingInInn,
+        ConsumingFood
     }
 }

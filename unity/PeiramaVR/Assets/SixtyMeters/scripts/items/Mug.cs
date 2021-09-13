@@ -38,9 +38,31 @@ public class Mug : MonoBehaviour
         if (fillContent < 100)
         {
             fillContent += 1;
-            var fillingLerp = Mathf.Lerp(FillingStartPos, FillingEndPos,fillContent/100f);
+            var fillingLerp = Mathf.Lerp(FillingStartPos, FillingEndPos, fillContent / 100f);
             var fillingPos = _drinkingMeshTransform.localPosition;
             _drinkingMeshTransform.localPosition = new Vector3(fillingPos.x, fillingPos.y, fillingLerp);
         }
+    }
+
+    public void DrinkFromMug()
+    {
+        if (fillContent >= 10)
+        {
+            fillContent -= 10;
+            var fillingLerp = Mathf.Lerp(FillingStartPos, FillingEndPos, fillContent / 100f);
+            var fillingPos = _drinkingMeshTransform.localPosition;
+            _drinkingMeshTransform.localPosition = new Vector3(fillingPos.x, fillingPos.y, fillingLerp);
+            //TODO: sound effect
+        }
+        else if (fillContent > 0)
+        {
+            // Last sip
+            fillContent = 0;
+        }
+    }
+
+    public bool IsEmpty()
+    {
+        return fillContent <= 0;
     }
 }

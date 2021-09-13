@@ -4,6 +4,7 @@ using HurricaneVR.Framework.Core;
 using HurricaneVR.Framework.Core.Utils;
 using SixtyMeters.scripts.helpers;
 using SixtyMeters.scripts.items;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,7 +15,7 @@ namespace SixtyMeters.scripts.ai
         private Animator _animator;
         private NavMeshAgent _navMeshAgent;
         private IkControl _ikControl;
-        
+
         private float _nextCheck;
         private WayPoint _nextTarget;
         private Dictionary<string, List<WayPoint>> _destinations = new Dictionary<string, List<WayPoint>>();
@@ -26,8 +27,6 @@ namespace SixtyMeters.scripts.ai
 
         public List<WayPointPath> wayPointPaths;
 
-        public GameObject dummyObject;
-
         //Temporary marker for sitting spot, should be replaced with logic to choose from available seats
         public WayPoint seatMarker;
 
@@ -37,7 +36,7 @@ namespace SixtyMeters.scripts.ai
             _animator = GetComponent<Animator>();
             _navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
             _ikControl = gameObject.GetComponent<IkControl>();
-            
+
             _nextCheck = Time.time;
             _navMeshAgent.updatePosition = false;
             _navMeshAgent.updateRotation = true;
@@ -100,30 +99,60 @@ namespace SixtyMeters.scripts.ai
                 }
             }
 
-            if (_currentState == InnCustomerState.SittingInInn)
+            if (_currentState == InnCustomerState.SittingInInn && NextCheck())
             {
-                //TODO: reduce rate of searching for a mug
-                var closestMug = gameObject.GetComponentInChildren<DetectItems>().GetClosestItemOfType<UsableByNpc>();
-                if (closestMug != null && closestMug.GetComponent<UsableByNpc>().isEquipped == false)
+                var nearbyUsableItem =
+                    gameObject.GetComponentInChildren<DetectItems>().GetClosestItemOfType<UsableByNpc>();
+                if (nearbyUsableItem != null && nearbyUsableItem.GetComponent<UsableByNpc>().isEquipped == false)
                 {
-                    GetComponent<EquipmentManager>().EquipRightHand(closestMug);
-                    StartCoroutine(StartDrinking());
+                    // Handle Mug
+                    if (nearbyUsableItem.GetComponent<Mug>() != null)
+                    {
+                        GetComponent<EquipmentManager>().EquipRightHand(nearbyUsableItem);
+                        StartCoroutine(ChangeStateInSeconds(InnCustomerState.ConsumingFood, 5));
+                    }
+                    //TODO: add additional items that should be handled here
+                }
+
+                NextCheckInSeconds(1);
+            }
+
+            if (_currentState == InnCustomerState.ConsumingFood && NextCheck())
+            {
+                //TODO: handle drinking vs. eating
+                if (!_animator.GetBool("Drink"))
+                {
+                    // Drink animation loops at 90frames -> 3 seconds
+                    _animator.SetBool("Drink", true);
+                    
+                    // First nextCheck is in 1.5s which should be when the Mug is at the mouth for the first time
+                    NextCheckInSeconds(1.5f);
+                }
+                else
+                {
+                    var mug = GetComponent<EquipmentManager>().rightHand.GetComponentInChildren<Mug>();
+                    mug.DrinkFromMug();
+                    if (mug.IsEmpty())
+                    {
+                        _animator.SetBool("Drink", false);
+                    }
+                    NextCheckInSeconds(3);
                 }
             }
 
             //Check if npc should do something new, can probably be moved into idle state later
-            idleCheck();
-        }
-        
-        IEnumerator StartDrinking()
-        {
-            yield return new WaitForSeconds(10);
-            _animator.SetBool("Drink", true);
+            IdleCheck();
         }
 
-        private void idleCheck()
+        private IEnumerator ChangeStateInSeconds(InnCustomerState nextState, float seconds)
         {
-            if (Time.time > _nextCheck && _currentState == InnCustomerState.Idle)
+            yield return new WaitForSeconds(seconds);
+            _nextState = nextState;
+        }
+
+        private void IdleCheck()
+        {
+            if (NextCheck() && _currentState == InnCustomerState.Idle)
             {
                 NextCheckInSeconds(30);
                 //FollowPath("ToCity");
@@ -131,7 +160,7 @@ namespace SixtyMeters.scripts.ai
             }
         }
 
-        public void FindPlaceToSit()
+        private void FindPlaceToSit()
         {
             //_navMeshAgent.enabled = false;
             _nextState = InnCustomerState.FindPlaceToSit;
@@ -188,6 +217,10 @@ namespace SixtyMeters.scripts.ai
             }
         }
 
+        private bool NextCheck()
+        {
+            return Time.time >= _nextCheck;
+        }
 
         private void NextCheckInSeconds(float seconds)
         {
