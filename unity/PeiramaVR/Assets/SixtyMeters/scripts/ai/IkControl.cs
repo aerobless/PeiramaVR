@@ -17,11 +17,13 @@ public class IkControl : MonoBehaviour
 
     public float handLerpSpeed;
 
-    private Transform _rightHandFollow = null;
+    private Transform _rightHandFollow = null; // Used when tracking IS necessary
     private bool _rightHandStopFollow = false;
+    private Vector3 _rightHandDestination = Vector3.zero; // Used when tracking is not necessary
 
     private Transform _leftHandFollow = null;
     private bool _leftHandStopFollow = false;
+    private Vector3 _leftHandDestination = Vector3.zero;
 
     float _elapsedTime = 0;
     private const float TimeReaction = 2f;
@@ -40,10 +42,23 @@ public class IkControl : MonoBehaviour
                 Vector3.Lerp(rightHandControl.position, goalPos, Time.deltaTime * handLerpSpeed);
         }
 
+        if (_rightHandDestination != Vector3.zero)
+        {
+            Vector3 goalPos = _rightHandDestination + Vector3.up * 0.3f;
+            rightHandControl.position =
+                Vector3.Lerp(rightHandControl.position, goalPos, Time.deltaTime * handLerpSpeed);
+        }
 
         if (_leftHandFollow)
         {
             Vector3 goalPos = _leftHandFollow.position + Vector3.up * 0.3f;
+            leftHandControl.position =
+                Vector3.Lerp(leftHandControl.position, goalPos, Time.deltaTime * handLerpSpeed);
+        }
+        
+        if (_leftHandDestination != Vector3.zero)
+        {
+            Vector3 goalPos = _leftHandDestination + Vector3.up * 0.3f;
             leftHandControl.position =
                 Vector3.Lerp(leftHandControl.position, goalPos, Time.deltaTime * handLerpSpeed);
         }
@@ -53,12 +68,28 @@ public class IkControl : MonoBehaviour
     {
         _rightHandFollow = gameObject;
         rightHandIkActive = true;
+        _rightHandStopFollow = false;
+    }
+
+    public void RightHandDestination(Vector3 destination)
+    {
+        _rightHandDestination = destination;
+        rightHandIkActive = true;
+        _rightHandStopFollow = false;
     }
 
     public void LeftHandFollow(Transform gameObject)
     {
         _leftHandFollow = gameObject;
         leftHandIkActive = true;
+        _leftHandStopFollow = false;
+    }
+
+    public void LeftHandDestination(Vector3 destination)
+    {
+        _leftHandDestination = destination;
+        rightHandIkActive = true;
+        _leftHandStopFollow = false;
     }
 
     public void LeftHandStopFollowing()
@@ -66,6 +97,7 @@ public class IkControl : MonoBehaviour
         //leftHandIkActive = false;
         _leftHandStopFollow = true;
         _leftHandFollow = null;
+        _leftHandDestination = Vector3.zero;
     }
 
     public void RightHandStopFollowing()
@@ -73,6 +105,7 @@ public class IkControl : MonoBehaviour
         //rightHandIkActive = false;
         _rightHandStopFollow = true;
         _rightHandFollow = null;
+        _rightHandDestination = Vector3.zero;
     }
 
     void OnAnimatorIK()

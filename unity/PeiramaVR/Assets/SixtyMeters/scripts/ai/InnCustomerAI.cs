@@ -29,10 +29,12 @@ namespace SixtyMeters.scripts.ai
 
         //Temporary marker for sitting spot, should be replaced with logic to choose from available seats
         public WayPoint seatMarker;
+        private EquipmentManager _equipmentManager;
 
         // Start is called before the first frame update
         void Start()
         {
+            _equipmentManager = GetComponent<EquipmentManager>();
             _animator = GetComponent<Animator>();
             _navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
             _ikControl = gameObject.GetComponent<IkControl>();
@@ -105,10 +107,10 @@ namespace SixtyMeters.scripts.ai
                     gameObject.GetComponentInChildren<DetectItems>().GetClosestItemOfType<UsableByNpc>();
                 if (nearbyUsableItem != null && nearbyUsableItem.GetComponent<UsableByNpc>().isEquipped == false)
                 {
-                    // Handle Mug
-                    if (nearbyUsableItem.GetComponent<Mug>() != null)
+                    // Handle Mug & check that it isn't empty
+                    if (nearbyUsableItem.GetComponent<Mug>() != null && !nearbyUsableItem.GetComponent<Mug>().IsEmpty())
                     {
-                        GetComponent<EquipmentManager>().EquipRightHand(nearbyUsableItem);
+                        _equipmentManager.EquipRightHand(nearbyUsableItem);
                         StartCoroutine(ChangeStateInSeconds(InnCustomerState.ConsumingFood, 5));
                     }
                     //TODO: add additional items that should be handled here
@@ -124,19 +126,25 @@ namespace SixtyMeters.scripts.ai
                 {
                     // Drink animation loops at 90frames -> 3 seconds
                     _animator.SetBool("Drink", true);
-                    
+
                     // First nextCheck is in 1.5s which should be when the Mug is at the mouth for the first time
                     NextCheckInSeconds(1.5f);
                 }
                 else
                 {
-                    var mug = GetComponent<EquipmentManager>().rightHand.GetComponentInChildren<Mug>();
+                    var mug = _equipmentManager.rightHand.GetComponentInChildren<Mug>();
                     mug.DrinkFromMug();
                     if (mug.IsEmpty())
                     {
                         _animator.SetBool("Drink", false);
+                        _equipmentManager.DropRightHand();
+                        StartCoroutine(ChangeStateInSeconds(InnCustomerState.SittingInInn, 5));
+                        NextCheckInSeconds(10);
                     }
-                    NextCheckInSeconds(3);
+                    else
+                    {
+                        NextCheckInSeconds(3);
+                    }
                 }
             }
 
@@ -211,10 +219,8 @@ namespace SixtyMeters.scripts.ai
             {
                 return Vector3.Distance(transform.position, _nextTarget.transform.position) <= distance;
             }
-            else
-            {
-                return true;
-            }
+
+            return true;
         }
 
         private bool NextCheck()
