@@ -178,7 +178,7 @@ MonoBehaviour:
   CanJointBreak: 0
   JointBreakForce: 2000
   JointBreakTorque: 2000
-  HandGrabbedClip: {fileID: 8300000, guid: d3e02ab47c80d784bbe4f4070fb24cf8, type: 3}
+  HandGrabbedClip: {fileID: 0}
   StartingSocket: {fileID: 0}
   LinkStartingSocket: 0
   AutoApplyLayer: 1
