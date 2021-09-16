@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using SixtyMeters.scripts;
 using UnityEngine;
 
 public class MoneyJar : MonoBehaviour
@@ -7,8 +6,11 @@ public class MoneyJar : MonoBehaviour
 
     public int money;
 
+    private int _internalMoney = 0;
+
     public AudioSource audioSource;
     public AudioClip coinDropped;
+    public TextDisplay textDisplay;
     
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,11 @@ public class MoneyJar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (money != _internalMoney)
+        {
+            _internalMoney = money;
+            textDisplay.SetText(_internalMoney+" Coins");
+        }
     }
     
     void OnCollisionEnter(Collision collision)
