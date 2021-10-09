@@ -61,6 +61,7 @@ crashlytics-build.properties
 # Excluding third party assets & unnecessary unity internals
 /unity/PeiramaVR/Assets/ThirdParty/*
 /unity/PeiramaVR/Assets/HurricaneVR/*
+/unity/PeiramaVR/Assets/Oculus/*
 /unity/PeiramaVR/Library/*
 /unity/PeiramaVR/Logs/*
 /unity/PeiramaVR/Temp/*
