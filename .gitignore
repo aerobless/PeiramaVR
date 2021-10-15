@@ -59,9 +59,10 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Excluding third party assets & unnecessary unity internals
-/unity/PeiramaVR/Assets/ThirdParty/*
-/unity/PeiramaVR/Assets/HurricaneVR/*
-/unity/PeiramaVR/Assets/Oculus/*
-/unity/PeiramaVR/Library/*
-/unity/PeiramaVR/Logs/*
-/unity/PeiramaVR/Temp/*
+/unity/SkyInn/Assets/ThirdParty/*
+/unity/SkyInn/Assets/HurricaneVR/*
+/unity/SkyInn/Assets/Oculus/*
+/unity/SkyInn/Assets/TextMesh Pro/*
+/unity/SkyInn/Library/*
+/unity/SkyInn/Logs/*
+/unity/SkyInn/Temp/*
