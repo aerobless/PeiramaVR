@@ -45,9 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsJointAnchor: 0
+  OneHandOnly: 0
   AllowedAngleDifference: 360
   LeftHand: 1
   RightHand: 1
+  Group: -1
   HandRotationOffset: {x: 0, y: 0, z: 0}
   HandPositionOffset: {x: 0, y: 0, z: 0}
   GrabIndicatorPosition: {fileID: 0}
@@ -60,7 +62,11 @@ MonoBehaviour:
   LooseDamper: 100
   LooseAngularDamper: 1
   LineCanReposition: 1
+  LineInitialCanReposition: 1
   LineCanRotate: 1
+  LineFreeRotation: 0
+  LineInitialCanRotate: 1
+  Others: []
 --- !u!114 &2048545577689864595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,8 +183,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8067726398312463513, guid: af98c3c9bb94f6c41b17c98f65f41c43, type: 3}
-  - {fileID: -8896051167825165466, guid: af98c3c9bb94f6c41b17c98f65f41c43, type: 3}
+  - {fileID: 2100000, guid: 56f5904e1c9c09c488b74f8d79f09548, type: 2}
+  - {fileID: 2100000, guid: 840d47fc1d5a9fa4d9b32b5dea8cd2f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -322,6 +328,7 @@ MonoBehaviour:
   UnSocketed:
     m_PersistentCalls:
       m_Calls: []
+  GrabPointsMeta: []
   Grabbers: []
   HandGrabbers: []
   Stabbers: []

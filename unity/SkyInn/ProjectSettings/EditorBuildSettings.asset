@@ -5,12 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/HurricaneVR/Samples/Scenes/Examples.unity
-    guid: 2321d99633aec5647999122f902e890a
   - enabled: 1
-    path: Assets/SixtyMeters/scenes/Empty Lab.unity
-    guid: 4ef688d3164247c4fb32e074b85085e2
+    path: Assets/SixtyMeters/scenes/SkyInn.unity
+    guid: 2e58c116456bf8842afc60b226ffbb16
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 83da9d69b0b471841bb0c2c2bdc72782, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8fefbb92c7b912241a1a3be977bb657b, type: 2}

@@ -5069,6 +5069,7 @@ MonoBehaviour:
   UnSocketed:
     m_PersistentCalls:
       m_Calls: []
+  GrabPointsMeta: []
   Grabbers: []
   HandGrabbers: []
   Stabbers: []
@@ -5093,8 +5094,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8067726398312463513, guid: 90b2b2a3bdaf7d248b65ce91197fcf43, type: 3}
-  - {fileID: -261759342450114163, guid: 90b2b2a3bdaf7d248b65ce91197fcf43, type: 3}
+  - {fileID: 2100000, guid: af61aa37d87f0a245a8b4804855af111, type: 2}
+  - {fileID: 2100000, guid: 9360076f25e4831429a3959b538203d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

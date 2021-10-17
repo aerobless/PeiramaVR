@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -963155552896987743, guid: ccb9e1522b32f794386a5d4e25338892, type: 3}
+  - {fileID: 2100000, guid: 9c4a9c12e14daa0499bf1886f2370903, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -232,6 +232,7 @@ MonoBehaviour:
   UnSocketed:
     m_PersistentCalls:
       m_Calls: []
+  GrabPointsMeta: []
   Grabbers: []
   HandGrabbers: []
   Stabbers: []
@@ -248,8 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f0a0ab295247a681b1b569944a2bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroyedVersion: {fileID: 1150947501960401867, guid: e70392ced86a5024d87652b0b081a346,
-    type: 3}
+  DestroyedVersion: {fileID: 1150947501960401867, guid: e70392ced86a5024d87652b0b081a346, type: 3}
   ExplosionRadius: 0.1
   ExplosionPower: 5
   ExplosionUpwardsPower: 1
