@@ -6,6 +6,9 @@ namespace SixtyMeters.models.portal.scripts
 {
     public class PortalBehaviour : MonoBehaviour
     {
+        public AudioSource audioSource;
+        public AudioClip objectPassingThroughPortal;
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -23,6 +26,7 @@ namespace SixtyMeters.models.portal.scripts
             var defaultItemBehaviour = other.GetComponent<DefaultItemBehaviour>();
             if (defaultItemBehaviour != null)
             {
+                audioSource.PlayOneShot(objectPassingThroughPortal);
                 defaultItemBehaviour.DestroyOrRespawn();
             }
         }

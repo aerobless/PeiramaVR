@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a9e706a-6ee6-49d3-98cd-beff8ee95558" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/portal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/portal.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/DefaultItemBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/DefaultItemBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +23,8 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/DefaultItemBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/DefaultItemBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zcr87VFN8vZqfgxDRU27FPSzeJ" />
@@ -73,7 +73,7 @@
       <workItem from="1634458069219" duration="5000" />
       <workItem from="1634462362297" duration="4000" />
       <workItem from="1634469281067" duration="2000" />
-      <workItem from="1634665742214" duration="2806000" />
+      <workItem from="1634665742214" duration="3356000" />
     </task>
     <servers />
   </component>
