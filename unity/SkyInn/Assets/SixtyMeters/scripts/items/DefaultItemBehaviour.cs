@@ -14,10 +14,12 @@ namespace SixtyMeters.scripts.items
 
         private Vector3 _startPosition;
         private Quaternion _startRotation;
+        private Rigidbody _rigidbody;
 
         // Start is called before the first frame update
         void Start()
         {
+            _rigidbody = GetComponent<Rigidbody>();
             SaveStartPosition();
         }
 
@@ -35,11 +37,32 @@ namespace SixtyMeters.scripts.items
 
         private void CheckIfObjectShouldRespawn()
         {
-            if (respawnWhenDestroyed && transform.position.y < LevelFloor)
+            if (transform.position.y < LevelFloor)
             {
-                transform.position = _startPosition;
-                transform.rotation = _startRotation;
+                DestroyOrRespawn();
             }
+        }
+
+        public void DestroyOrRespawn()
+        {
+            if (respawnWhenDestroyed)
+            {
+                Respawn();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+        
+        private void Respawn()
+        {
+            transform.position = _startPosition;
+            transform.rotation = _startRotation;
+            
+            //Zero out velocity, otherwise the object will continue flying at its start position
+            _rigidbody.velocity = Vector3.zero;
+            _rigidbody.angularVelocity = Vector3.zero;
         }
     }
 }
