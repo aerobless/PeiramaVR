@@ -2,59 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a9e706a-6ee6-49d3-98cd-beff8ee95558" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/bottle/bottle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/bottle/bottle.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/bottle/broken bottle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/bottle/broken bottle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/textures/coin jar.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/textures/coin jar.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/textures/glass jar.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/textures/glass jar.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/inn.blend" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/inn.blend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/inn.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/inn.blend1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/mug/beer.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/mug/beer.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/Beer Barrel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/Beer Barrel.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/DefaultItemBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/Broom 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/Broom 1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/Mug.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/Mug.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/bottle (breakable).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/bottle (breakable).prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/plate (breakable).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/plate (breakable).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/LightingData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-0_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-0_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-0_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-0_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-0_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-0_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-1_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-1_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-1_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-1_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-1_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-1_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-1_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-1_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-2_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-2_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-2_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-2_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-2_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-2_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-2_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-2_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-3_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-3_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-3_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-3_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-3_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-3_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-3_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-3_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-4_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-4_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-4_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-4_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-4_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-4_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-4_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-4_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-5_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-5_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-5_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-5_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-5_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-5_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-5_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-5_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-6_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-6_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-6_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-6_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-6_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-6_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-6_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-6_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-7_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-7_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-7_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-7_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-7_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-7_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-7_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-7_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +16,16 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/a8/2bcb2ace/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/75/0da5d457/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/DefaultItemBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/DefaultItemBehaviour.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1zcr87VFN8vZqfgxDRU27FPSzeJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -110,6 +73,7 @@
       <workItem from="1634458069219" duration="5000" />
       <workItem from="1634462362297" duration="4000" />
       <workItem from="1634469281067" duration="2000" />
+      <workItem from="1634665742214" duration="1549000" />
     </task>
     <servers />
   </component>
@@ -118,6 +82,17 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
