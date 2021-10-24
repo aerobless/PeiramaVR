@@ -176,7 +176,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5033,7 +5033,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b488b1874765a994e9882f7c5922d576, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -5167,7 +5167,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -9933,6 +9933,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1655111100286467143}
+  - component: {fileID: 26001941440524216}
+  - component: {fileID: 6370096838166911681}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -9958,9 +9960,36 @@ Transform:
   - {fileID: 1655111100423972994}
   - {fileID: 1655111099210951861}
   - {fileID: 1257238477451796672}
+  - {fileID: 7640505000864443372}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &26001941440524216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655111100286467142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573e695032be06b4abeabb44c64d1fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalPlane: {fileID: 1655111100288954555}
+--- !u!65 &6370096838166911681
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655111100286467142}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3259306, y: 0.072787225, z: 0.44993013}
+  m_Center: {x: 1.4012809, y: -0.7247901, z: 0.75076336}
 --- !u!1 &1655111100288954555
 GameObject:
   m_ObjectHideFlags: 0
@@ -10057,8 +10086,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 977286e7aef83dd4a9bc0e1fedd64cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 1655111099210951862}
+  soundEffects: {fileID: 1655111099210951862}
   objectPassingThroughPortal: {fileID: 8300000, guid: 7a327fd864fe4e2498b033448b289cdf, type: 3}
+  portalBackgroundNoise: {fileID: 1655111099729895094}
+  portalMotes: {fileID: 1655111099780223026}
+  blackBackground: {fileID: 1655111099519896299}
+  spawnPoint: {fileID: 4239548503455219196}
+  spawnableFriendlyVisitors:
+  - {fileID: 6745548940389028718, guid: 0676884cca57baa4ba12134dbd8ea12d, type: 3}
 --- !u!65 &1655111100288954549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10165,6 +10200,36 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 5
   m_ShadowAngle: 0
+--- !u!1 &4239548503455219196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7640505000864443372}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7640505000864443372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4239548503455219196}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.307, z: 0.603}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1655111100286467143}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1655111099286734625
 MeshCollider:
   m_ObjectHideFlags: 0

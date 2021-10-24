@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using HurricaneVR.Framework.Core;
-using HurricaneVR.Framework.Core.Utils;
-using SixtyMeters.scripts.helpers;
+using Oculus.Platform.Models;
+using SixtyMeters.scripts.helpers.waypoints;
 using SixtyMeters.scripts.items;
-using Unity.VisualScripting;
+using SixtyMeters.scripts.level;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -25,15 +24,17 @@ namespace SixtyMeters.scripts.ai
         private int _pathIndex;
         private string _destination;
 
+        private InnLevelManager _innLevelManager;
         public List<WayPointPath> wayPointPaths;
 
-        //Temporary marker for sitting spot, should be replaced with logic to choose from available seats
-        public WayPoint seatMarker;
         private EquipmentManager _equipmentManager;
+        
 
         // Start is called before the first frame update
         void Start()
         {
+            SetupInnLevelManager();
+
             _equipmentManager = GetComponent<EquipmentManager>();
             _animator = GetComponent<Animator>();
             _navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
@@ -48,6 +49,15 @@ namespace SixtyMeters.scripts.ai
             _nextState = InnCustomerState.Idle;
 
             LoadWaypointPaths();
+        }
+
+        private void SetupInnLevelManager()
+        {
+            _innLevelManager = FindObjectOfType<InnLevelManager>();
+            if (_innLevelManager == null)
+            {
+                Debug.Log("InnCustomerAI needs an InnLevelManager to work, it wasn't found in the scene!");
+            }
         }
 
         private void LoadWaypointPaths()
@@ -174,7 +184,7 @@ namespace SixtyMeters.scripts.ai
             _nextState = InnCustomerState.FindPlaceToSit;
 
             //TODO: logic to choose a seat
-            WalkToTarget(seatMarker);
+            WalkToTarget(_innLevelManager.GetEmptySeatInInn());
         }
 
         private void WalkToTarget(WayPoint wayPoint)

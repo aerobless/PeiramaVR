@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SixtyMeters.scripts.helpers
+namespace SixtyMeters.scripts.helpers.waypoints
 {
     public class WayPointPath : MonoBehaviour
     {
