@@ -9,6 +9,7 @@ namespace SixtyMeters.scripts.level
     public class InnLevelManager : MonoBehaviour
     {
         public List<WaypointSeat> seatsInInn;
+        public WayPoint kitchen;
 
         // Start is called before the first frame update
         void Start()
