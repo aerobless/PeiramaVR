@@ -63,6 +63,7 @@ crashlytics-build.properties
 /unity/SkyInn/Assets/HurricaneVR/*
 /unity/SkyInn/Assets/Oculus/*
 /unity/SkyInn/Assets/TextMesh Pro/*
+/unity/SkyInn/Assets/Plugins/*
 /unity/SkyInn/Library/*
 /unity/SkyInn/Logs/*
 /unity/SkyInn/Temp/*
