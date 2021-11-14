@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a9e706a-6ee6-49d3-98cd-beff8ee95558" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAnimator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAnimator.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/InnLevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/InnLevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +37,14 @@
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/ai/InnCustomerAI.cs" />
       <option value="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/Scripts/Behaviours/BehaviourPuppet.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/InnLevelManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAnimator.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAI.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zcr87VFN8vZqfgxDRU27FPSzeJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -95,7 +97,8 @@
       <workItem from="1635187119353" duration="1000" />
       <workItem from="1636215258689" duration="2000" />
       <workItem from="1636284376001" duration="1510000" />
-      <workItem from="1636720890380" duration="3393000" />
+      <workItem from="1636720890380" duration="3995000" />
+      <workItem from="1636891424696" duration="3702000" />
     </task>
     <servers />
   </component>
