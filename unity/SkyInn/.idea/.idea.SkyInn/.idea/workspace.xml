@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a9e706a-6ee6-49d3-98cd-beff8ee95558" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAnimator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAnimator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAIv2.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAIv2.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/Goblin Warrior Root with navmesh 1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/Goblin Warrior Root with navmesh 1.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/coins/CoinJar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/coins/CoinJar.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,10 +26,14 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/a8/2bcb2ace/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_Private.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/bb/5716efb1/WaitForSeconds.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4D9F1448-54E4-4B48-B32B-352F99EC3435/b1/ae866a10/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/75/0da5d457/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.polybrush@1.1.2/Editor/Interface/PolybrushEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/mug/scripts/SuperMug.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4D9F1448-54E4-4B48-B32B-352F99EC3435/6d/6a14d4c9/ForceMode.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -38,7 +50,10 @@
       <option value="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/Scripts/Behaviours/BehaviourPuppet.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/InnLevelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAnimator.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/mug/scripts/SuperMug.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/Scripts/NavMeshPuppet.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAIv2.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zcr87VFN8vZqfgxDRU27FPSzeJ" />
@@ -98,7 +113,9 @@
       <workItem from="1636215258689" duration="2000" />
       <workItem from="1636284376001" duration="1510000" />
       <workItem from="1636720890380" duration="3995000" />
-      <workItem from="1636891424696" duration="3702000" />
+      <workItem from="1636891424696" duration="8533000" />
+      <workItem from="1637398447899" duration="4012000" />
+      <workItem from="1637405190868" duration="5722000" />
     </task>
     <servers />
   </component>

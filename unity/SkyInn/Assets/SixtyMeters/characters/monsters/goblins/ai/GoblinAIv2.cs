@@ -9,7 +9,7 @@ using UnityEngine.AI;
 
 namespace SixtyMeters.characters.monsters.goblins.ai
 {
-    public class GoblinAI : MonoBehaviour
+    public class GoblinAIv2 : MonoBehaviour
     {
         
         //TODO: destroy when falling into void
@@ -20,9 +20,11 @@ namespace SixtyMeters.characters.monsters.goblins.ai
         //TODO: can maybe be tamed when offering food instead of fight
         //TODO: disable navmesh when agent is pushed so they can be pushed off the islands
         
+        public BehaviourPuppet behaviourPuppet;
+        public HVRGrabbable headGrab;
+        
         private NavMeshAgent _navMeshAgent;
         private Animator _animator;
-        private PuppetMaster _puppetMaster;
         private InnLevelManager _innLevelManager;
         private GameObject _player;
 
@@ -32,77 +34,70 @@ namespace SixtyMeters.characters.monsters.goblins.ai
         
         private const float RateLimit = 1;
         private const float PlayerAggressionRange = 5;
+        private const int levelDeathFloor = -50;
         
-        Vector2 smoothDeltaPosition = Vector2.zero;
-        Vector2 velocity = Vector2.zero;
         
         // Start is called before the first frame update
         void Start()
         {
             _navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
-            _navMeshAgent.updatePosition = false;
-            _animator = gameObject.GetComponentInChildren<Animator>();
-            _puppetMaster = gameObject.GetComponentInChildren<PuppetMaster>();
+            _animator = gameObject.GetComponent<Animator>();
             _player = GameObject.Find("PlayerController");
             SetupInnLevelManager();
-            GoToKitchen();
             
-            HVRGrabbable grabbable = GetComponentInChildren<HVRGrabbable>();
-            grabbable.HandGrabbed.AddListener(OnHandGrabbed);
-            grabbable.HandReleased.AddListener(OnHandReleased);
+            headGrab.HandGrabbed.AddListener(OnHandGrabbed);
+            headGrab.HandReleased.AddListener(OnHandReleased);
         }
 
-        // Update is called once per frame
         void Update()
         {
-           Vector3 worldDeltaPosition = _navMeshAgent.nextPosition - transform.position;
+            // Keep the agent disabled while the puppet is unbalanced.
+            _navMeshAgent.enabled = behaviourPuppet.state == BehaviourPuppet.State.Puppet;
 
-            // Map 'worldDeltaPosition' to local space
-            float dx = Vector3.Dot (transform.right, worldDeltaPosition);
-            float dy = Vector3.Dot (transform.forward, worldDeltaPosition);
-            Vector2 deltaPosition = new Vector2 (dx, dy);
-
-            // Low-pass filter the deltaMove
-            float smooth = Mathf.Min(1.0f, Time.deltaTime/0.15f);
-            smoothDeltaPosition = Vector2.Lerp (smoothDeltaPosition, deltaPosition, smooth);
-
-            // Update velocity if time advances
-            if (Time.deltaTime > 1e-5f)
-                velocity = smoothDeltaPosition / Time.deltaTime;
-
-            bool shouldMove = velocity.magnitude > 0.5f && _navMeshAgent.remainingDistance > _navMeshAgent.radius;
-            _animator.SetBool("moving", shouldMove);
-
-            //GetComponent<LookAt>().lookAtTargetPosition = _navMeshAgent.steeringTarget + transform.forward;
-            _animator.SetFloat("VelocityX", velocity.x/10);
-            _animator.SetFloat("VelocityY", velocity.y/10);
-            
-            if (Time.time > _nextMovementCheck)
+            // Update agent destination and Animator
+            if (_navMeshAgent.enabled)
             {
-                // It may be more realistic to do a ray cast or similar in a cone from the goblins face so that it
-                // doesn't see the player if it's behind a goblin.
-                if (GetDistanceToPlayer() < PlayerAggressionRange)
+                if (Time.time > _nextMovementCheck)
                 {
-                    _navMeshAgent.SetDestination(_player.transform.position);
+                    // It may be more realistic to do a ray cast or similar in a cone from the goblins face so that it
+                    // doesn't see the player if it's behind a goblin.
+                    if (GetDistanceToPlayer() < PlayerAggressionRange)
+                    {
+                        _navMeshAgent.SetDestination(_player.transform.position);
+                    }
+                    else
+                    {
+                        GoToKitchen();
+                    }
+                    _nextMovementCheck = Time.time + RateLimit;
                 }
-                else
-                {
-                    GoToKitchen();
-                }
-                _nextMovementCheck = Time.time + RateLimit;
+
+                _animator.SetFloat("Forward", _navMeshAgent.velocity.magnitude * 0.25f);
             }
-            /*if (worldDeltaPosition.magnitude > _navMeshAgent.radius)
-                transform.position = _navMeshAgent.nextPosition - 0.9f*worldDeltaPosition;*/
+
+            DestroyAfterFallingOutOfWorld();
+            
         }
-        
+
+        private void DestroyAfterFallingOutOfWorld()
+        {
+            if (transform.position.y < levelDeathFloor)
+            {
+                Destroy(transform.parent.gameObject);
+            }
+        }
+
         private void OnHandGrabbed(HVRHandGrabber arg0, HVRGrabbable arg1)
         {
             Debug.Log("grabbed");
+            behaviourPuppet.SetState(BehaviourPuppet.State.Unpinned);
+            behaviourPuppet.canGetUp = false;
         }
         
         private void OnHandReleased(HVRHandGrabber arg0, HVRGrabbable arg1)
         {
             Debug.Log("hand released");
+            behaviourPuppet.canGetUp = true;
         }
         
         public void AnimatorMove ()

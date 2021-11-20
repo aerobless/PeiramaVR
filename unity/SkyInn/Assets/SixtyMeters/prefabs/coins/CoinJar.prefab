@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4069349440380032170}
   - component: {fileID: 2733383170108889752}
-  - component: {fileID: 2921029942262884606}
   - component: {fileID: 4939188039632149641}
   - component: {fileID: 136918823406402091}
   m_Layer: 0
@@ -81,14 +80,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &2921029942262884606
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2304085923999606409}
-  m_CullTransparentMesh: 0
 --- !u!114 &4939188039632149641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,6 +524,7 @@ MonoBehaviour:
   UnSocketed:
     m_PersistentCalls:
       m_Calls: []
+  GrabPointsMeta: []
   Grabbers: []
   HandGrabbers: []
   Stabbers: []
