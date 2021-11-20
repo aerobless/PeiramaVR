@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using SixtyMeters.models.portal_rune.scripts;
 using SixtyMeters.scripts.helpers;
 using SixtyMeters.scripts.items;
 using UnityEngine;
@@ -17,25 +18,71 @@ namespace SixtyMeters.models.portal.scripts
 
         public ParticleSystem portalMotes;
         public ParticleSystem blackBackground;
+        private Renderer _renderer;
+
+        public Material pinkPortalPlane;
+        public Material greenPortalPlane;
+        
+        public List<GameObject> spawnableFriendlyVisitors;
+        public List<GameObject> spawnableGoblins;
 
         public GameObject spawnPoint;
         
         private int _friendlyNpcVisitors = 0;
+        private int _goblinCount = 0;
         private const int MaxFriendlyVisitors = 1;
+        private const int MaxGoblins = 10;
+        private const float RateLimit = 1;
+        private float _nextSpawnCreatureCheck;
 
-        public List<GameObject> spawnableFriendlyVisitors;
-
+        private PortalLocation _selectedPortalLocation;
 
         // Start is called before the first frame update
         void Start()
         {
+            _renderer = GetComponent<Renderer>();
             gameObject.SetActive(false);
         }
 
         // Update is called once per frame
         void Update()
         {
+            if (_selectedPortalLocation != PortalLocation.None && Time.time > _nextSpawnCreatureCheck)
+            {
+                switch (_selectedPortalLocation)
+                {
+                    case PortalLocation.GoblinCave:
+                        CheckAndSpawnGoblin();
+                        break;
+                    case PortalLocation.HumanCity:
+                        CheckAndSpawnFriendlyVisitor();
+                        break;
+                }
+                
+                _nextSpawnCreatureCheck = Time.time + RateLimit;
+            }
         
+        }
+
+        private void CheckAndSpawnFriendlyVisitor()
+        {
+            if (_friendlyNpcVisitors < MaxFriendlyVisitors)
+            {
+                var visitor = Helpers.GETRandomFromList(spawnableFriendlyVisitors);
+                Instantiate(visitor, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                ++_friendlyNpcVisitors;
+       
+            }
+        }
+        
+        private void CheckAndSpawnGoblin()
+        {
+            if (_goblinCount < MaxGoblins)
+            {
+                var goblin = Helpers.GETRandomFromList(spawnableGoblins);
+                Instantiate(goblin, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                ++_goblinCount;    //TODO: this should be counted elsewhere.. or be decremented when goblins die
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -48,16 +95,23 @@ namespace SixtyMeters.models.portal.scripts
             }
         }
 
-        public void OpenPortal()
+        public void OpenPortal(PortalLocation portalLocation)
         {
+            _selectedPortalLocation = portalLocation;
+            switch (portalLocation)
+            {
+                //TODO: maybe add sound effect for distored human voice or goblin murmer depending on location
+                case PortalLocation.GoblinCave:
+                    _renderer.material = greenPortalPlane;
+                    break;
+                case PortalLocation.HumanCity:
+                    _renderer.material = pinkPortalPlane;
+                    break;
+            }
             gameObject.SetActive(true);
             portalBackgroundNoise.Play();
             portalMotes.Play();
             blackBackground.Play();
-            if (_friendlyNpcVisitors < MaxFriendlyVisitors)
-            {
-                StartCoroutine(SpawnVisitor());
-            }
         }
 
         public void ClosePortal()
@@ -66,15 +120,9 @@ namespace SixtyMeters.models.portal.scripts
             portalBackgroundNoise.Stop();
             portalMotes.Stop();
             blackBackground.Stop();
+            _selectedPortalLocation = PortalLocation.None;
         }
-
-        private IEnumerator SpawnVisitor()
-        {
-            yield return new WaitForSeconds(10);
-            var randomVisitor = Helpers.GETRandomFromList(spawnableFriendlyVisitors);
-            Instantiate(randomVisitor, spawnPoint.transform.position, spawnPoint.transform.rotation);
-            ++_friendlyNpcVisitors;
-        }
+        
         
     }
 }

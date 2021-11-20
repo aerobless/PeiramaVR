@@ -1,3 +1,4 @@
+using SixtyMeters.models.portal_rune.scripts;
 using UnityEngine;
 
 namespace SixtyMeters.models.portal.scripts
@@ -20,7 +21,7 @@ namespace SixtyMeters.models.portal.scripts
             var portalRune = other.GetComponent<PortalRune>();
             if (portalRune != null)
             {
-                _portalBehaviour.OpenPortal();
+                _portalBehaviour.OpenPortal(portalRune.portalLocation);
             }
         }
 

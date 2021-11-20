@@ -10091,9 +10091,13 @@ MonoBehaviour:
   portalBackgroundNoise: {fileID: 1655111099729895094}
   portalMotes: {fileID: 1655111099780223026}
   blackBackground: {fileID: 1655111099519896299}
-  spawnPoint: {fileID: 4239548503455219196}
+  pinkPortalPlane: {fileID: 2100000, guid: f3039f96c7aed5642a04f64271816433, type: 2}
+  greenPortalPlane: {fileID: 2100000, guid: 432f71444fbd6324a95d264c8598af4e, type: 2}
   spawnableFriendlyVisitors:
   - {fileID: 6745548940389028718, guid: 0676884cca57baa4ba12134dbd8ea12d, type: 3}
+  spawnableGoblins:
+  - {fileID: 9008843573675200906, guid: 847a25e970bb9b64e8f2accf484a59f1, type: 3}
+  spawnPoint: {fileID: 4239548503455219196}
 --- !u!65 &1655111100288954549
 BoxCollider:
   m_ObjectHideFlags: 0

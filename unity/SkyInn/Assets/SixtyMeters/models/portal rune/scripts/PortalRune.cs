@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
+using SixtyMeters.models.portal.scripts;
 using UnityEngine;
 
-public class PortalRune : MonoBehaviour
+namespace SixtyMeters.models.portal_rune.scripts
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PortalRune : MonoBehaviour
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+        public PortalLocation portalLocation;
+        // Start is called before the first frame update
+        void Start()
+        {
         
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+        
+        }
     }
 }

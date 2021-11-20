@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a9e706a-6ee6-49d3-98cd-beff8ee95558" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalLocation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalLocation.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/Goblin v3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/Goblin v3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal rune/materials/portal rune.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal rune/materials/portal rune.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal rune/scripts/PortalRune.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal rune/scripts/PortalRune.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalRuneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalRuneController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/shaders/Portal Swirl.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/shaders/Portal Swirl.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/portal rune.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/portal rune.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,10 +39,8 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/DefaultItemBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/DefaultItemBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalRuneController.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/HelperFunctions.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/Helpers.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WayPoint.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WayPointPath.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WaypointSeat.cs" />
@@ -42,6 +52,11 @@
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAI.cs" />
       <option value="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/Scripts/NavMeshPuppet.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAIv2.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/portal rune/scripts/PortalLocation.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/portal rune/scripts/PortalRune.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalRuneController.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalLocation.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zcr87VFN8vZqfgxDRU27FPSzeJ" />
@@ -103,7 +118,7 @@
       <workItem from="1636720890380" duration="3995000" />
       <workItem from="1636891424696" duration="8533000" />
       <workItem from="1637398447899" duration="4012000" />
-      <workItem from="1637405190868" duration="6432000" />
+      <workItem from="1637405190868" duration="11116000" />
     </task>
     <servers />
   </component>

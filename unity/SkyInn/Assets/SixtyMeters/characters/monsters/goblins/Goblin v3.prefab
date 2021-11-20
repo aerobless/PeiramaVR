@@ -6447,7 +6447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   behaviourPuppet: {fileID: 6569069008691582753}
-  headGrab: {fileID: 0}
+  headGrab: {fileID: 9008843572513774601}
 --- !u!114 &9008843574095616898
 MonoBehaviour:
   m_ObjectHideFlags: 0
