@@ -16,8 +16,10 @@ namespace SixtyMeters.scripts.ai
         private IkControl _ikControl;
 
         private float _nextCheck;
-        private WayPoint _nextTarget;
-        private Dictionary<string, List<WayPoint>> _destinations = new Dictionary<string, List<WayPoint>>();
+        
+        private readonly Queue<WayPoint> _nextWaypoints = new Queue<WayPoint>();
+        
+        private WayPoint _nextWaypoint;
 
         private InnCustomerState _currentState;
         private InnCustomerState _nextState;
@@ -25,7 +27,6 @@ namespace SixtyMeters.scripts.ai
         private string _destination;
 
         private InnLevelManager _innLevelManager;
-        public List<WayPointPath> wayPointPaths;
 
         private EquipmentManager _equipmentManager;
         
@@ -47,8 +48,6 @@ namespace SixtyMeters.scripts.ai
             // Initial state
             _currentState = InnCustomerState.Idle;
             _nextState = InnCustomerState.Idle;
-
-            LoadWaypointPaths();
         }
 
         private void SetupInnLevelManager()
@@ -58,16 +57,6 @@ namespace SixtyMeters.scripts.ai
             {
                 Debug.Log("InnCustomerAI needs an InnLevelManager to work, it wasn't found in the scene!");
             }
-        }
-
-        private void LoadWaypointPaths()
-        {
-            _destinations = new Dictionary<string, List<WayPoint>>();
-            wayPointPaths.ForEach(path =>
-            {
-                _destinations.Add("To" + path.destination, path.GetWaypoints(false));
-                _destinations.Add("From" + path.destination, path.GetWaypoints(true));
-            });
         }
 
         // Update is called once per frame
@@ -89,25 +78,21 @@ namespace SixtyMeters.scripts.ai
                 _animator.SetBool("Walk", false);
             }
 
-            if (_currentState == InnCustomerState.FollowPath)
-            {
-                _animator.SetBool("Walk", true);
-
-                if (WayPointReached(1))
-                {
-                    NextPathStep();
-                }
-            }
-
-            if (_currentState == InnCustomerState.FindPlaceToSit)
+            if (_currentState == InnCustomerState.Moving)
             {
                 if (WayPointReached(0.5f))
                 {
-                    //TODO: sit down logic
-                    _animator.SetBool("Walk", false);
-                    _navMeshAgent.enabled = false; //TODO: remember to re-enable when standing up
-                    _animator.SetBool("SitOnBench", true);
-                    _nextState = InnCustomerState.SittingInInn;
+                    if (_nextWaypoints.Count == 0)
+                    {
+                        _animator.SetBool("Walk", false);
+                        _navMeshAgent.enabled = false; //TODO: remember to re-enable when standing up
+                        _animator.SetBool("SitOnBench", true);
+                        _nextState = InnCustomerState.SittingInInn;
+                    }
+                    else
+                    {
+                        WalkToTarget(_nextWaypoints.Dequeue());   
+                    }
                 }
             }
 
@@ -173,61 +158,32 @@ namespace SixtyMeters.scripts.ai
             if (NextCheck() && _currentState == InnCustomerState.Idle)
             {
                 NextCheckInSeconds(30);
-                //FollowPath("ToCity");
                 FindPlaceToSit();
             }
         }
 
         private void FindPlaceToSit()
         {
-            //_navMeshAgent.enabled = false;
-            _nextState = InnCustomerState.FindPlaceToSit;
+            _nextState = InnCustomerState.Moving;
 
             //TODO: logic to choose a seat
-            WalkToTarget(_innLevelManager.GetEmptySeatInInn());
+            _innLevelManager.QueuePathToInn(_nextWaypoints);
+            _nextWaypoints.Enqueue(_innLevelManager.GetEmptySeatInInn());
         }
 
         private void WalkToTarget(WayPoint wayPoint)
         {
-            _nextTarget = wayPoint;
-            _navMeshAgent.SetDestination(_nextTarget.transform.position);
+            _nextWaypoint = wayPoint;
+            _navMeshAgent.SetDestination(_nextWaypoint.transform.position);
             _animator.SetBool("Walk", true);
         }
 
-        public void FollowPath(string destination)
-        {
-            Debug.Log("Following to " + destination);
-            _nextState = InnCustomerState.FollowPath;
-            _pathIndex = 0;
-            _destination = destination;
-            if (_destinations[_destination] == null)
-            {
-                Debug.Log("Destination " + destination + " does not exist!");
-            }
-
-            WalkToTarget(_destinations[_destination][_pathIndex]);
-        }
-
-        private void NextPathStep()
-        {
-            _pathIndex += 1;
-            Debug.Log("NextPathStep " + _pathIndex);
-
-            if (_destinations[_destination].Count > _pathIndex)
-            {
-                WalkToTarget(_destinations[_destination][_pathIndex]);
-            }
-            else
-            {
-                _nextState = InnCustomerState.Idle;
-            }
-        }
 
         private bool WayPointReached(float distance)
         {
-            if (_nextTarget != null)
+            if (_nextWaypoint != null)
             {
-                return Vector3.Distance(transform.position, _nextTarget.transform.position) <= distance;
+                return Vector3.Distance(transform.position, _nextWaypoint.transform.position) <= distance;
             }
 
             return true;

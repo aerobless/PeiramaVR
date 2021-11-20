@@ -4,7 +4,7 @@
     {
         FollowPath,
         Idle,
-        FindPlaceToSit,
+        Moving,
         SittingInInn,
         ConsumingFood
     }
