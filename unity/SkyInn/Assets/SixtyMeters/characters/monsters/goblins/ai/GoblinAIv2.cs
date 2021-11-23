@@ -11,40 +11,42 @@ namespace SixtyMeters.characters.monsters.goblins.ai
 {
     public class GoblinAIv2 : MonoBehaviour
     {
-        
-        //TODO: destroy when falling into void
         //TODO: spawn ragdoll on death
-        //TODO: basic intent to go to inn
         //TODO: fight when in range of player
         //TODO: squad ai, goblins of same squad will stay together
         //TODO: can maybe be tamed when offering food instead of fight
         //TODO: disable navmesh when agent is pushed so they can be pushed off the islands
-        
+
         public BehaviourPuppet behaviourPuppet;
+        public PuppetMaster puppetMaster;
         public HVRGrabbable headGrab;
-        
+
+        public int healthPoints = 100;
+
         private NavMeshAgent _navMeshAgent;
         private Animator _animator;
         private InnLevelManager _innLevelManager;
         private GameObject _player;
 
         private WayPoint _targetWaypoint;
-        
+
         private float _nextMovementCheck;
-        
+        private float _lastDmgTakenTime;
+
         private const float RateLimit = 1;
         private const float PlayerAggressionRange = 5;
-        private const int levelDeathFloor = -50;
-        
-        
+        private const int LevelDeathFloor = -50;
+
+
         // Start is called before the first frame update
         void Start()
         {
+            _lastDmgTakenTime = Time.time;
             _navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
             _animator = gameObject.GetComponent<Animator>();
             _player = GameObject.Find("PlayerController");
             SetupInnLevelManager();
-            
+
             headGrab.HandGrabbed.AddListener(OnHandGrabbed);
             headGrab.HandReleased.AddListener(OnHandReleased);
         }
@@ -69,6 +71,7 @@ namespace SixtyMeters.characters.monsters.goblins.ai
                     {
                         GoToKitchen();
                     }
+
                     _nextMovementCheck = Time.time + RateLimit;
                 }
 
@@ -76,14 +79,35 @@ namespace SixtyMeters.characters.monsters.goblins.ai
             }
 
             DestroyAfterFallingOutOfWorld();
-            
+
+            if (healthPoints <= 0 && puppetMaster.state != PuppetMaster.State.Dead)
+            {
+                Die();
+            }
         }
 
         private void DestroyAfterFallingOutOfWorld()
         {
-            if (transform.position.y < levelDeathFloor)
+            if (transform.position.y < LevelDeathFloor)
             {
                 Destroy(transform.parent.gameObject);
+            }
+        }
+
+        private void Die()
+        {
+            //TODO: death sound
+            puppetMaster.state = PuppetMaster.State.Dead;
+        }
+
+        public void TakeDamage(int damage)
+        {
+            //TODO: maybe more elegant solution can be found, used to debounce multiple hits
+            if (Time.time > _lastDmgTakenTime + 1)
+            {
+                healthPoints -= damage;
+                _lastDmgTakenTime = Time.time;
+                Debug.Log("Took dmg, health left: " + healthPoints); //TODO: remove me   
             }
         }
 
@@ -93,20 +117,19 @@ namespace SixtyMeters.characters.monsters.goblins.ai
             behaviourPuppet.SetState(BehaviourPuppet.State.Unpinned);
             behaviourPuppet.canGetUp = false;
         }
-        
+
         private void OnHandReleased(HVRHandGrabber arg0, HVRGrabbable arg1)
         {
             Debug.Log("hand released");
             behaviourPuppet.canGetUp = true;
         }
-        
-        public void AnimatorMove ()
+
+        public void AnimatorMove()
         {
             // Update position to agent position
             Vector3 position = _animator.rootPosition;
             position.y = _navMeshAgent.nextPosition.y;
             //transform.position = position;
-            
         }
 
         private float GetDistanceToPlayer()
