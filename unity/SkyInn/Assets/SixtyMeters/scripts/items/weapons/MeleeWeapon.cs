@@ -27,6 +27,18 @@ namespace SixtyMeters.scripts.items.weapons
             {
                 var goblinAi = otherGameObject.GetComponentInChildren<GoblinAIv2>();
                 goblinAi.TakeDamage(dmgPerHit);
+                Vector3 dir = other.contacts[0].point - transform.position;
+                dir.Normalize();
+                
+                var magnitude = 5000;
+
+                // We then get the opposite (-Vector3) and normalize it
+                //dir = -dir.normalized;
+                // And finally we add force in the direction of dir and multiply it by force. 
+                // This will push back the player
+                
+                other.gameObject.GetComponent<Rigidbody>().AddForce(dir * magnitude);
+                //GetComponent<Rigidbody>().AddForce(dir*force);
             }
         }
     }

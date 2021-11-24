@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5a9e706a-6ee6-49d3-98cd-beff8ee95558" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/Bot Puppet.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/Bot Puppet.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/Goblin v3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/Goblin v3.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAIv2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAIv2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/pan.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/pan.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/weapons/MeleeWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/weapons/MeleeWeapon.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +54,8 @@
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/ai/InnCustomerAI.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/ai/Enemy.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinEnemy.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/weapons/MeleeWeapon.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAIv2.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/weapons/MeleeWeapon.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zcr87VFN8vZqfgxDRU27FPSzeJ" />
@@ -124,6 +120,8 @@
       <workItem from="1637405190868" duration="14634000" />
       <workItem from="1637698568169" duration="2064000" />
       <workItem from="1637700747930" duration="1266000" />
+      <workItem from="1637780982493" duration="743000" />
+      <workItem from="1637782333038" duration="1359000" />
     </task>
     <servers />
   </component>

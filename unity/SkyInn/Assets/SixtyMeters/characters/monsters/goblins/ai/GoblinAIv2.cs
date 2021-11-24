@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using SixtyMeters.scripts.helpers.waypoints;
 using HurricaneVR.Framework.Core;
 using HurricaneVR.Framework.Core.Grabbers;
 using RootMotion.Dynamics;
+using SixtyMeters.scripts.helpers;
 using SixtyMeters.scripts.level;
 using UnityEngine;
 using UnityEngine.AI;
@@ -20,6 +22,9 @@ namespace SixtyMeters.characters.monsters.goblins.ai
         public BehaviourPuppet behaviourPuppet;
         public PuppetMaster puppetMaster;
         public HVRGrabbable headGrab;
+        public AudioSource audioSource;
+
+        public List<AudioClip> deathSounds;
 
         public int healthPoints = 100;
 
@@ -96,7 +101,7 @@ namespace SixtyMeters.characters.monsters.goblins.ai
 
         private void Die()
         {
-            //TODO: death sound
+            audioSource.PlayOneShot(Helpers.GETRandomFromList(deathSounds));
             puppetMaster.state = PuppetMaster.State.Dead;
         }
 
@@ -107,6 +112,7 @@ namespace SixtyMeters.characters.monsters.goblins.ai
             {
                 healthPoints -= damage;
                 _lastDmgTakenTime = Time.time;
+                behaviourPuppet.SetState(BehaviourPuppet.State.Unpinned);
                 Debug.Log("Took dmg, health left: " + healthPoints); //TODO: remove me   
             }
         }
