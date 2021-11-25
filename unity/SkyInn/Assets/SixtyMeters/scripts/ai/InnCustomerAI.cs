@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Oculus.Platform.Models;
 using SixtyMeters.scripts.helpers.waypoints;
 using SixtyMeters.scripts.items;
 using SixtyMeters.scripts.level;

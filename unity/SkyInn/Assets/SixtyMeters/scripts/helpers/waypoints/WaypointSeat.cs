@@ -2,21 +2,21 @@
 {
     public class WaypointSeat : WayPoint
     {
-        private bool _occupied;
+        public bool occupied = false;
 
         public bool IsOccupied()
         {
-            return _occupied;
+            return occupied;
         }
 
         public void TakeSeat()
         {
-            _occupied = true;
+            occupied = true;
         }
 
         public void LeaveSeat()
         {
-            _occupied = false;
+            occupied = false;
         }
     }
 }
