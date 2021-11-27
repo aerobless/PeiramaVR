@@ -3,17 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5a9e706a-6ee6-49d3-98cd-beff8ee95558" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurer with ai.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurer with ai.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/animations/femaleAdventurerAnimations.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/animations/femaleAdventurerAnimations.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/ariyaa 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/ariyaa 1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/helpers/Waypoint Seat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/helpers/Waypoint Seat.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/ai/InnCustomerAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/ai/InnCustomerAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WayPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WayPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WaypointSeat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WaypointSeat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +31,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4D9F1448-54E4-4B48-B32B-352F99EC3435/b1/ae866a10/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/75/0da5d457/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/weapons/MeleeWeapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/06/cb1e5030/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -64,8 +58,8 @@
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/Helpers.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/ai/InnCustomerAI.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WaypointSeat.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WayPoint.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zcr87VFN8vZqfgxDRU27FPSzeJ" />
@@ -133,6 +127,7 @@
       <workItem from="1637780982493" duration="743000" />
       <workItem from="1637782333038" duration="1359000" />
       <workItem from="1637867597628" duration="5961000" />
+      <workItem from="1638037113598" duration="3194000" />
     </task>
     <servers />
   </component>
