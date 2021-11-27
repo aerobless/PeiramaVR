@@ -9,7 +9,7 @@ namespace SixtyMeters.scripts.items
         public Vector3 rightHandRotation; //apply to local rotation of object
 
         public bool isEquipped = false;
-        
+
         // Start is called before the first frame update
         void Start()
         {

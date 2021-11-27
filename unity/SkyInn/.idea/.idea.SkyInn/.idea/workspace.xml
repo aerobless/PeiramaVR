@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a9e706a-6ee6-49d3-98cd-beff8ee95558" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/EquipmentSlot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/EquipmentSlot.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/animations/femaleAdventurerAnimations.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/animations/femaleAdventurerAnimations.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/helpers/Waypoint Seat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/helpers/Waypoint Seat.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/Mug.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/Mug.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/Mug.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/Mug.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/UsableByNpc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/UsableByNpc.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +26,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/29A6C194-5F57-4474-95FC-AD42118554C7/37/36e82bcd/Queue`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.polybrush@1.1.2/Editor/Interface/PolybrushEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/mug/scripts/SuperMug.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/69/d71069b9/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4D9F1448-54E4-4B48-B32B-352F99EC3435/6d/6a14d4c9/ForceMode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/a8/2bcb2ace/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_Private.cs" root0="SKIP_HIGHLIGHTING" />
@@ -59,6 +63,9 @@
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/ai/InnCustomerAI.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WaypointSeat.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WayPoint.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/EquipmentSlot.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/UsableByNpc.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/EquipmentManagerV2.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" />
     </changedPaths>
   </component>
@@ -127,7 +134,7 @@
       <workItem from="1637780982493" duration="743000" />
       <workItem from="1637782333038" duration="1359000" />
       <workItem from="1637867597628" duration="5961000" />
-      <workItem from="1638037113598" duration="3194000" />
+      <workItem from="1638037113598" duration="9441000" />
     </task>
     <servers />
   </component>

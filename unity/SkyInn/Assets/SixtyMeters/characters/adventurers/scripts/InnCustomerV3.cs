@@ -22,6 +22,8 @@ namespace SixtyMeters.characters.adventurers.scripts
         private bool _navMeshAuto = true;
         private Animator _animator;
         private InnLevelManager _innLevelManager;
+        private DetectItems _itemDetector;
+        private EquipmentManagerV2 _equipmentManager;
 
         private float _nextCheck;
         private WayPoint _nextWaypoint;
@@ -37,8 +39,10 @@ namespace SixtyMeters.characters.adventurers.scripts
         // Start is called before the first frame update
         void Start()
         {
-            _navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
-            _animator = gameObject.GetComponentInChildren<Animator>(); //TODO: chang me back
+            _navMeshAgent = GetComponent<NavMeshAgent>();
+            _equipmentManager = GetComponent<EquipmentManagerV2>();
+            _animator = GetComponentInChildren<Animator>();
+            _itemDetector = GetComponentInChildren<DetectItems>();
             SetupInnLevelManager();
 
             _nextCheck = Time.time;
@@ -83,15 +87,13 @@ namespace SixtyMeters.characters.adventurers.scripts
                         transform.LookAt(_nextWaypoint.transform);
                         puppetMaster.SwitchToKinematicMode();
                         _animator.SetBool("SitOnBench", true);
-                        Debug.Log("attempting to lerp to seat");
-                        
+
                         // Lerp player into seat
                         var nextWaypointTransform = _nextWaypoint.transform;
                         StopAllCoroutines();
                         StartCoroutine(MoveTo(nextWaypointTransform.position, nextWaypointTransform.rotation));
                         
                         _nextState = InnCustomerState.SittingInInn;
-                        //TODO: maybe need to disable physics for sitting
                     }
                     else
                     {
@@ -102,19 +104,15 @@ namespace SixtyMeters.characters.adventurers.scripts
 
             if (_currentState == InnCustomerState.SittingInInn && NextCheck())
             {
-                StartCoroutine(ChangeStateInSeconds(InnCustomerState.ConsumingFood, 3));
-                //TODO: for testing only ^^
-
-                var nearbyUsableItem =
-                    gameObject.GetComponentInChildren<DetectItems>().GetClosestItemOfType<UsableByNpc>();
+                var nearbyUsableItem = _itemDetector.GetClosestItemOfType<UsableByNpc>();
                 if (nearbyUsableItem != null && nearbyUsableItem.GetComponent<UsableByNpc>().isEquipped == false)
                 {
-                    // Handle Mug & check that it isn't empty
-                    if (nearbyUsableItem.GetComponent<Mug>() != null &&
-                        !nearbyUsableItem.GetComponent<Mug>().IsEmpty())
+                    var isMug = nearbyUsableItem.GetComponent<Mug>() != null;
+                    var mugIsFull = !nearbyUsableItem.GetComponent<Mug>().IsEmpty();
+                    if (isMug && mugIsFull)
                     {
-                        //TODO: fixme
-                        //_equipmentManager.EquipRightHand(nearbyUsableItem);
+                        var puppetMasterProp = nearbyUsableItem.transform.root.GetComponent<PuppetMasterProp>();
+                        _equipmentManager.Equip(puppetMasterProp, EquipmentSlot.RightHand);
                         StartCoroutine(ChangeStateInSeconds(InnCustomerState.ConsumingFood, 5));
                     }
                     //TODO: add additional items that should be handled here
@@ -125,10 +123,8 @@ namespace SixtyMeters.characters.adventurers.scripts
 
             if (_currentState == InnCustomerState.ConsumingFood && NextCheck())
             {
-                Debug.Log("consuming food");
-                _animator.SetBool("Drink", true);
                 //TODO: handle drinking vs. eating
-                /*if (!_animator.GetBool("Drink"))
+                if (!_animator.GetBool("Drink"))
                 {
                     // Drink animation loops at 90frames -> 3 seconds
                     _animator.SetBool("Drink", true);
@@ -136,22 +132,21 @@ namespace SixtyMeters.characters.adventurers.scripts
                     // First nextCheck is in 1.5s which should be when the Mug is at the mouth for the first time
                     NextCheckInSeconds(1.5f);
                 }
-                else*/
+                else
                 {
-                    //TODO: fixme
-                    /*var mug = _equipmentManager.rightHand.GetComponentInChildren<Mug>();
+                    var mug = _equipmentManager.rightHand.currentProp.meshRoot.GetComponent<Mug>();
                     mug.DrinkFromMug();
                     if (mug.IsEmpty())
                     {
                         _animator.SetBool("Drink", false);
-                        _equipmentManager.DropRightHand();
+                        _equipmentManager.Drop(EquipmentSlot.RightHand);
                         StartCoroutine(ChangeStateInSeconds(InnCustomerState.SittingInInn, 5));
                         NextCheckInSeconds(10);
                     }
                     else
                     {
                         NextCheckInSeconds(3);
-                    }*/
+                    }
                 }
             }
 
