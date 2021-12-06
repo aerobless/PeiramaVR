@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 899156721863925393}
   - component: {fileID: 6175955718692670608}
   - component: {fileID: 6693473292339932716}
+  - component: {fileID: 7893883212505341309}
   m_Layer: 0
   m_Name: Mug
   m_TagString: Untagged
@@ -221,6 +222,173 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0138641474dfa0c4d8a6237690d066a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7893883212505341309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899156721863925396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f425a4a83914b04af3f1642c000f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherLookAtTarget: {fileID: 0}
+  otherTargetsRoot: {fileID: 0}
+  positionOffsetSpace: {fileID: 0}
+  weightCurves:
+  - type: 0
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: -0.011316699
+        outSlope: -0.011316699
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5000082
+        value: 0.9999696
+        inSlope: -0.020634042
+        outSlope: -0.020634042
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.89966214
+        value: 0.24878043
+        inSlope: -1.4132261
+        outSlope: -1.4132261
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.4997185
+        value: -0.00049932115
+        inSlope: 0.02458247
+        outSlope: 0.02458247
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - type: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.000024750829
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.19625771
+        value: 0.09075418
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.37559718
+        value: 0.03243583
+        inSlope: -0.7133002
+        outSlope: -0.7133002
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5024417
+        value: 0.000024750829
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.0915519
+        value: 0.21499051
+        inSlope: -0.012338278
+        outSlope: -0.012338278
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5010269
+        value: 0.000024750829
+        inSlope: 0.041266534
+        outSlope: 0.041266534
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+  - type: 10
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: -0.011316699
+        outSlope: -0.011316699
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5000082
+        value: 0.9999696
+        inSlope: -0.020634042
+        outSlope: -0.020634042
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  multipliers:
+  - curve: 0
+    multiplier: 1
+    result: 1
+  - curve: 2
+    multiplier: 1
+    result: 3
+  - curve: 2
+    multiplier: 1
+    result: 4
+  - curve: 0
+    multiplier: 0.3
+    result: 6
+  events:
+  - time: 0.5
+    pause: 0
+    pickUp: 1
+    animations: []
+    messages: []
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1159561589781032680
 GameObject:
   m_ObjectHideFlags: 0

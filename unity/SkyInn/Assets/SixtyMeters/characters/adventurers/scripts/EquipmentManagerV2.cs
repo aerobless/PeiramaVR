@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using RootMotion.Dynamics;
+using RootMotion.FinalIK;
 using UnityEngine;
 
 namespace SixtyMeters.characters.adventurers.scripts
@@ -9,6 +11,8 @@ namespace SixtyMeters.characters.adventurers.scripts
     {
         public PropMuscle rightHand;
         public PropMuscle leftHand;
+
+        public FullBodyBipedIK fbIk;
 
         private Dictionary<int, Vector3> _itemOriginPositions;
 
@@ -30,7 +34,8 @@ namespace SixtyMeters.characters.adventurers.scripts
             switch (slot)
             {
                 case EquipmentSlot.RightHand:
-                    rightHand.currentProp = item;
+                    fbIk.solver.rightHandEffector.position = item.transform.position;
+                    StartCoroutine(EquipItem(fbIk.solver.rightHandEffector, item));
                     break;
                 case EquipmentSlot.LeftHand:
                     leftHand.currentProp = item;
@@ -59,6 +64,26 @@ namespace SixtyMeters.characters.adventurers.scripts
                 default:
                     throw new ArgumentOutOfRangeException(nameof(slot), slot, null);
             }
+        }
+        
+        IEnumerator EquipItem(IKEffector effector, PuppetMasterProp item)
+        {
+            float fraction = 0;
+            // While not there, move
+            while (fraction < 1)
+            {
+                fraction += Time.deltaTime * 0.5f;
+                effector.positionWeight = Mathf.Lerp(0, 1, fraction);
+                yield return null;
+            }
+            rightHand.currentProp = item;
+            while (fraction > 0)
+            {
+                fraction -= Time.deltaTime * 0.5f;
+                effector.positionWeight = Mathf.Lerp(0, 1, fraction);
+                yield return null;
+            }
+            Debug.Log("here");
         }
     }
 }

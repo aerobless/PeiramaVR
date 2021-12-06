@@ -112,6 +112,7 @@ namespace SixtyMeters.characters.adventurers.scripts
                     if (isMug && mugIsFull)
                     {
                         var puppetMasterProp = nearbyUsableItem.transform.root.GetComponent<PuppetMasterProp>();
+                        nearbyUsableItem.GetComponent<UsableByNpc>().isEquipped = true; //TODO fixme
                         _equipmentManager.Equip(puppetMasterProp, EquipmentSlot.RightHand);
                         StartCoroutine(ChangeStateInSeconds(InnCustomerState.ConsumingFood, 5));
                     }
@@ -140,6 +141,7 @@ namespace SixtyMeters.characters.adventurers.scripts
                     {
                         _animator.SetBool("Drink", false);
                         _equipmentManager.Drop(EquipmentSlot.RightHand);
+                        mug.GetComponent<UsableByNpc>().isEquipped = false; //TODO fixme
                         StartCoroutine(ChangeStateInSeconds(InnCustomerState.SittingInInn, 5));
                         NextCheckInSeconds(10);
                     }
