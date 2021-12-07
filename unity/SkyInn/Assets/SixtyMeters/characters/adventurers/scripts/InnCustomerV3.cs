@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using RootMotion.Dynamics;
+using RootMotion.FinalIK;
 using SixtyMeters.scripts.ai;
 using SixtyMeters.scripts.helpers.waypoints;
 using SixtyMeters.scripts.items;
@@ -111,9 +112,10 @@ namespace SixtyMeters.characters.adventurers.scripts
                     var mugIsFull = !nearbyUsableItem.GetComponent<Mug>().IsEmpty();
                     if (isMug && mugIsFull)
                     {
-                        var puppetMasterProp = nearbyUsableItem.transform.root.GetComponent<PuppetMasterProp>();
+                        var interactionObject = nearbyUsableItem.transform.root.GetComponent<InteractionObject>();
                         nearbyUsableItem.GetComponent<UsableByNpc>().isEquipped = true; //TODO fixme
-                        _equipmentManager.Equip(puppetMasterProp, EquipmentSlot.RightHand);
+                        
+                        _equipmentManager.Equip(interactionObject, EquipmentSlot.RightHand);
                         StartCoroutine(ChangeStateInSeconds(InnCustomerState.ConsumingFood, 5));
                     }
                     //TODO: add additional items that should be handled here
@@ -135,7 +137,7 @@ namespace SixtyMeters.characters.adventurers.scripts
                 }
                 else
                 {
-                    var mug = _equipmentManager.rightHand.currentProp.meshRoot.GetComponent<Mug>();
+                    var mug = _equipmentManager.GetInteractionObject(EquipmentSlot.RightHand).GetComponentInChildren<Mug>();
                     mug.DrinkFromMug();
                     if (mug.IsEmpty())
                     {
