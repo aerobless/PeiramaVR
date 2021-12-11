@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5a9e706a-6ee6-49d3-98cd-beff8ee95558" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/SettingsPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/SettingsPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +154,7 @@
       <workItem from="1638037113598" duration="10281000" />
       <workItem from="1638818076464" duration="5773000" />
       <workItem from="1638905885357" duration="3413000" />
-      <workItem from="1639245028888" duration="5957000" />
+      <workItem from="1639245028888" duration="8268000" />
     </task>
     <servers />
   </component>
