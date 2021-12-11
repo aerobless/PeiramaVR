@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5a9e706a-6ee6-49d3-98cd-beff8ee95558" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/SettingsPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/SettingsPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,30 +23,32 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.5/Runtime/VisualScripting.Core/Utilities/ComponentHolderProtocol.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/bb/5716efb1/WaitForSeconds.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/40614DA1-0714-468E-86F0-CDEC1DBE96F5/1b/3efccde7/NavMeshAgent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/29A6C194-5F57-4474-95FC-AD42118554C7/95/d571a6e2/Stack`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/SettingsPanel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/29A6C194-5F57-4474-95FC-AD42118554C7/37/36e82bcd/Queue`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/23/a768afcc/Mathf.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/mug/scripts/SuperMug.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/69/d71069b9/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.polybrush@1.1.2/Editor/Interface/PolybrushEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4D9F1448-54E4-4B48-B32B-352F99EC3435/6d/6a14d4c9/ForceMode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/a8/2bcb2ace/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4D9F1448-54E4-4B48-B32B-352F99EC3435/8b/43ba1fc9/Collision.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_Private.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/33/ebd60272/Time.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/ToggleBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4D9F1448-54E4-4B48-B32B-352F99EC3435/b1/ae866a10/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/75/0da5d457/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/weapons/MeleeWeapon.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/06/cb1e5030/Vector3.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/9c/d01781cd/Dictionary`2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TextMeshProUGUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/SettingsPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/29A6C194-5F57-4474-95FC-AD42118554C7/37/36e82bcd/Queue`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5DB060C2-E1A7-4066-83B7-D65D782D6ADE/8e/9cd1f017/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.polybrush@1.1.2/Editor/Interface/PolybrushEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_Private.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/ToggleBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/06/cb1e5030/Vector3.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -79,9 +81,11 @@
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/EquipmentManagerV2.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MagipadBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/ToggleBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/SettingsPanel.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionEntry.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionsPanel.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zcr87VFN8vZqfgxDRU27FPSzeJ" />
@@ -154,7 +158,7 @@
       <workItem from="1638037113598" duration="10281000" />
       <workItem from="1638818076464" duration="5773000" />
       <workItem from="1638905885357" duration="3413000" />
-      <workItem from="1639245028888" duration="8268000" />
+      <workItem from="1639245028888" duration="11297000" />
     </task>
     <servers />
   </component>
