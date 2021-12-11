@@ -3,10 +3,72 @@
   <component name="ChangeListManager">
     <list default="true" id="5a9e706a-6ee6-49d3-98cd-beff8ee95558" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/EquipmentManagerV2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/EquipmentManagerV2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Polybrush/1.1.2/Shader Examples (URP)/Shader/PolybrushMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Polybrush/1.1.2/Shader Examples (URP)/Shader/PolybrushMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Polybrush/1.1.2/Shader Examples (URP)/Shader/test mat 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Polybrush/1.1.2/Shader Examples (URP)/Shader/test mat 2.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/Goblin v3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/Goblin v3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/configuration/UniversalRenderPipelineAsset_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/configuration/UniversalRenderPipelineAsset_Renderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/bottle/bottle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/bottle/bottle.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/bottle/materials/blue bottle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/bottle/materials/blue bottle.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/bottle/materials/bottle cork.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/bottle/materials/bottle cork.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/broom/materials/broom head.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/broom/materials/broom head.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/textures/coin jar.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/textures/coin jar.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/textures/glass jar.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/textures/glass jar.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/inn.blend" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/inn.blend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/inn.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/inn.blend1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/White Default.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/White Default.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/beer barrel cask.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/beer barrel cask.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/beer barrel metal ring.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/beer barrel metal ring.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/bridge rope.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/bridge rope.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/bridge wood.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/bridge wood.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/cliff rocks.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/cliff rocks.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/grass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/grass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/inn chimney.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/inn chimney.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/inn shelf.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/inn shelf.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/inn stone foundation.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/inn stone foundation.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/inn stone wall.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/inn stone wall.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/inn window.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/inn window.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/inn wood beams.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/inn wood beams.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/inn wood floor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/inn wood floor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/kitchen stove brick.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/kitchen stove brick.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/kitchen stove fire stone.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/kitchen stove fire stone.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/pathway.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/pathway.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/roof tiles.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/roof tiles.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/stonepath.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/stonepath.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/stove copper steam vent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/inn/materials/stove copper steam vent.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/kitchen/pan/materials/pan.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/kitchen/pan/materials/pan.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/kitchen/plate/materials/grey plate.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/kitchen/plate/materials/grey plate.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/mug/materials/beer.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/mug/materials/beer.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/mug/materials/mug metal handle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/mug/materials/mug metal handle.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal rune/materials/portal rune green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal rune/materials/portal rune green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal rune/materials/portal rune pink.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal rune/materials/portal rune pink.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/materials/chalice chains.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/materials/chalice chains.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/materials/magic chalice base.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/materials/magic chalice base.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/materials/portal basalt cliff.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/materials/portal basalt cliff.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/shaders/Portal Swirl green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/shaders/Portal Swirl green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/shaders/Portal Swirl pink.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/shaders/Portal Swirl pink.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/LightingData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-0_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-0_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-1_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-1_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-2_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-2_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-2_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-2_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-3_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-3_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-3_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-3_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-4_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-4_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-4_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-4_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-5_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-5_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-5_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-5_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-6_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-6_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-6_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/Lightmap-6_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,28 +90,24 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/bb/5716efb1/WaitForSeconds.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/40614DA1-0714-468E-86F0-CDEC1DBE96F5/1b/3efccde7/NavMeshAgent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/29A6C194-5F57-4474-95FC-AD42118554C7/95/d571a6e2/Stack`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/23/a768afcc/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/29A6C194-5F57-4474-95FC-AD42118554C7/37/36e82bcd/Queue`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/23/a768afcc/Mathf.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/mug/scripts/SuperMug.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/69/d71069b9/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.polybrush@1.1.2/Editor/Interface/PolybrushEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4D9F1448-54E4-4B48-B32B-352F99EC3435/6d/6a14d4c9/ForceMode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/a8/2bcb2ace/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4D9F1448-54E4-4B48-B32B-352F99EC3435/8b/43ba1fc9/Collision.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_Private.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/33/ebd60272/Time.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4D9F1448-54E4-4B48-B32B-352F99EC3435/b1/ae866a10/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/75/0da5d457/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/weapons/MeleeWeapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/06/cb1e5030/Vector3.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/9c/d01781cd/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/29A6C194-5F57-4474-95FC-AD42118554C7/37/36e82bcd/Queue`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.polybrush@1.1.2/Editor/Interface/PolybrushEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_Private.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/06/cb1e5030/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/9c/d01781cd/Dictionary`2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -81,6 +139,8 @@
       <option value="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/InteractionSystemTestGUI.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/EquipmentManagerV2.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MagipadBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zcr87VFN8vZqfgxDRU27FPSzeJ" />
@@ -110,10 +170,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="33584">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="33584" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -153,6 +213,7 @@
       <workItem from="1638037113598" duration="10281000" />
       <workItem from="1638818076464" duration="5773000" />
       <workItem from="1638905885357" duration="3413000" />
+      <workItem from="1639245028888" duration="1667000" />
     </task>
     <servers />
   </component>
