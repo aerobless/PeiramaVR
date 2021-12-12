@@ -1,3 +1,4 @@
+using SixtyMeters.scripts.level.missions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,10 +7,9 @@ namespace SixtyMeters.models.ui.pad.scripts
 {
     public class MissionEntry : MonoBehaviour
     {
-
         //TODO: different icons for different missions
         //TODO: different reward types, exp?
-        
+
         //TODO: think about live updates - what happens when the pad is open and a mission is completed?
 
         public TextMeshProUGUI titleElement;
@@ -19,27 +19,18 @@ namespace SixtyMeters.models.ui.pad.scripts
 
         public GameObject claimButtonEnabled;
         public GameObject claimButtonDisabled;
-    
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+        private Mission _mission;
 
-        public void SetDetails(string title, string description, int percentageComplete, int rewardCoinAmount)
+        public void SetMission(Mission mission)
         {
-            titleElement.text = title;
-            descriptionElement.text = description;
-            percentageCompleteElement.value = percentageComplete;
-            rewardCoinAmountElement.text = rewardCoinAmount+"";
+            _mission = mission;
+            titleElement.text = mission.title;
+            descriptionElement.text = mission.description;
+            percentageCompleteElement.value = mission.GetPercentageCompleted();
+            rewardCoinAmountElement.text = mission.rewardAmount + "";
 
-            if (percentageComplete >= 100)
+            if (mission.IsComplete())
             {
                 claimButtonEnabled.SetActive(true);
                 claimButtonDisabled.SetActive(false);
@@ -50,6 +41,11 @@ namespace SixtyMeters.models.ui.pad.scripts
                 claimButtonDisabled.SetActive(true);
             }
         }
-    
+
+        public void ClaimReward()
+        {
+            _mission.Claim();
+            Destroy(gameObject);
+        }
     }
 }

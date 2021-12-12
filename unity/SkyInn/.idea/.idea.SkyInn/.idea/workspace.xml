@@ -2,9 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a9e706a-6ee6-49d3-98cd-beff8ee95558" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/scripts/CoinJar.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/PlayerStatManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/PlayerStatManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/Mission.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/Mission.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionObjective.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionObjective.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/RewardType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/RewardType.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionEntry.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionsPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionsPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/ui/MissionEntry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/ui/MissionEntry.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/MoneyJar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/MoneyJar.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/scripts/CoinJar.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +56,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/weapons/MeleeWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/9c/d01781cd/Dictionary`2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TextMeshProUGUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
@@ -83,9 +101,19 @@
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MagipadBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/ToggleBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/SettingsPanel.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionEntry.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/MissionManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/RewardType.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/IMissionObjective.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/objectives/CleanInn.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionObjective.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/scripts/MoneyJar.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/PlayerStatManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/Mission.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/scripts/CoinJar.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionManager.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionsPanel.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionEntry.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zcr87VFN8vZqfgxDRU27FPSzeJ" />
@@ -158,7 +186,8 @@
       <workItem from="1638037113598" duration="10281000" />
       <workItem from="1638818076464" duration="5773000" />
       <workItem from="1638905885357" duration="3413000" />
-      <workItem from="1639245028888" duration="11297000" />
+      <workItem from="1639245028888" duration="11893000" />
+      <workItem from="1639337585825" duration="5868000" />
     </task>
     <servers />
   </component>

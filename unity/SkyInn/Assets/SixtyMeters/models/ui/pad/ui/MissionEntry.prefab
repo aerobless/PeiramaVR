@@ -1223,7 +1223,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6087843743414050785}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7431930420195886512}
+        m_TargetAssemblyTypeName: SixtyMeters.models.ui.pad.scripts.MissionEntry,
+          Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6087843743481348658
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using SixtyMeters.scripts.level.missions;
 using UnityEngine;
 
 namespace SixtyMeters.models.ui.pad.scripts
@@ -6,26 +7,34 @@ namespace SixtyMeters.models.ui.pad.scripts
     {
         public GameObject layout;
         public GameObject missionEntry;
+        public MissionManager missionManager;
+
+        private int _totalMissionCount = 0;
 
         // Start is called before the first frame update
         void Start()
         {
-            //TODO: move to level manager
-            addMission("Cleaning the Inn", "Guests might spend more money if the inn is sparkling clean..", 20, 20);
-            addMission("Open for business", "Find a way to open the portal so that guests can visit the inn", 0, 30);
-            addMission("Not killing goblins", "Keep the goblins from eating your lunch without killing them", 0, 150);
-            addMission("Short process", "Kill 10 goblins", 0, 5);
         }
 
         // Update is called once per frame
         void Update()
         {
+            if (_totalMissionCount != missionManager.GetAllMissions().Count)
+            {
+                _totalMissionCount = missionManager.GetAllMissions().Count;
+                //TODO: this will stop working if we add new missions at runtime..
+                //maybe a better solution can be found..
+                AddMissionEntries();
+            }
         }
-
-        private void addMission(string title, string desc, int percentageComplete, int coins)
+        
+        private void AddMissionEntries()
         {
-            GameObject entry = Instantiate(missionEntry, layout.transform);
-            entry.GetComponent<MissionEntry>().SetDetails(title, desc, percentageComplete, coins);
+            foreach (var mission in missionManager.GetUnclaimedMissions())
+            {
+                GameObject entry = Instantiate(missionEntry, layout.transform);
+                entry.GetComponent<MissionEntry>().SetMission(mission);
+            }
         }
     }
 }
