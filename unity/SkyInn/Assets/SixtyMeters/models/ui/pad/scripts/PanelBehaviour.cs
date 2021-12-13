@@ -6,11 +6,14 @@ namespace SixtyMeters.models.ui.pad.scripts
     {
 
         public bool activeAtStart = false;
+
+        private MagipadBehavior _magipadBehavior;
         
         // Start is called before the first frame update
         void Start()
         {
             gameObject.SetActive(activeAtStart);
+            _magipadBehavior = GetComponentInParent<MagipadBehavior>();
         }
 
         // Update is called once per frame
@@ -26,6 +29,7 @@ namespace SixtyMeters.models.ui.pad.scripts
 
         public void HidePanel()
         {
+            _magipadBehavior.PlayClickAudio();
             gameObject.SetActive(false);
         }
     }

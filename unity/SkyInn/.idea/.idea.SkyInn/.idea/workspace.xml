@@ -2,25 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a9e706a-6ee6-49d3-98cd-beff8ee95558" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/scripts/CoinJar.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/PlayerStatManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/PlayerStatManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/Mission.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/Mission.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionObjective.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionObjective.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/RewardType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/RewardType.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MagipadBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MagipadBehavior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionEntry.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionsPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionsPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/ui/MissionEntry.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/ui/MissionEntry.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/MoneyJar.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/MoneyJar.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/scripts/CoinJar.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/Cleanable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/Cleanable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/Mission.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/Mission.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionObjective.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionObjective.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +73,6 @@
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/portal rune/scripts/PortalRune.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalRuneController.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalLocation.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/InnLevelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/ai/Enemy.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinEnemy.cs" />
@@ -98,21 +87,23 @@
       <option value="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/InteractionSystemTestGUI.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/EquipmentManagerV2.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MagipadBehavior.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/ToggleBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/SettingsPanel.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/MissionManager.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/RewardType.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/IMissionObjective.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/objectives/CleanInn.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionObjective.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/scripts/MoneyJar.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/PlayerStatManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/Mission.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/scripts/CoinJar.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionManager.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionsPanel.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionObjective.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/Cleanable.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/Mission.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MagipadBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionEntry.cs" />
     </changedPaths>
   </component>
@@ -188,6 +179,7 @@
       <workItem from="1638905885357" duration="3413000" />
       <workItem from="1639245028888" duration="11893000" />
       <workItem from="1639337585825" duration="5868000" />
+      <workItem from="1639424819470" duration="3968000" />
     </task>
     <servers />
   </component>

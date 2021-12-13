@@ -35,10 +35,9 @@ namespace SixtyMeters.scripts.level.missions
             foreach (var missionObjective in missionObjectives)
             {
                 totalScore += missionObjective.GetPercentageCompleted();
-                totalScore /= missionObjectives.Count;
             }
 
-            return totalScore;
+            return totalScore / missionObjectives.Count;
         }
 
         public bool IsComplete()

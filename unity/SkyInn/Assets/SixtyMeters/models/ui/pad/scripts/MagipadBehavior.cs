@@ -4,6 +4,13 @@ namespace SixtyMeters.models.ui.pad.scripts
 {
     public class MagipadBehavior : MonoBehaviour
     {
+
+        public AudioSource audioSource;
+
+        public AudioClip notification;
+        public AudioClip click;
+        public AudioClip coinReward;
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -15,14 +22,19 @@ namespace SixtyMeters.models.ui.pad.scripts
         {
         
         }
-    
-        public void TaskOnClick(){
-            Debug.Log ("You have clicked the button!");
+
+        public void PlayClickAudio()
+        {
+            audioSource.PlayOneShot(click);
+        }
+        public void PlayNotificationAudio()
+        {
+            audioSource.PlayOneShot(notification);
+        }
+        public void PlayCoinRewardAudio()
+        {
+            audioSource.PlayOneShot(coinReward);
         }
 
-        public void ShowShopPanel()
-        {
-            
-        }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using SixtyMeters.models.portal_rune.scripts;
 using SixtyMeters.scripts.helpers;
 using SixtyMeters.scripts.items;
+using SixtyMeters.scripts.level.missions;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -25,6 +26,8 @@ namespace SixtyMeters.models.portal.scripts
         
         public List<GameObject> spawnableFriendlyVisitors;
         public List<GameObject> spawnableGoblins;
+
+        public MissionObjective missionObjective;
 
         public GameObject spawnPoint;
         
@@ -112,6 +115,11 @@ namespace SixtyMeters.models.portal.scripts
             portalBackgroundNoise.Play();
             portalMotes.Play();
             blackBackground.Play();
+
+            if (missionObjective)
+            {
+                missionObjective.percentageComplete = 100;
+            }
         }
 
         public void ClosePortal()
