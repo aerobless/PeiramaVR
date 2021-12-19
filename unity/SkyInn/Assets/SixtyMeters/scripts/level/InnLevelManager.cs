@@ -12,6 +12,7 @@ namespace SixtyMeters.scripts.level
         public List<WaypointSeat> seatsInInn;
         public WayPointPath pathToInn;
         public WayPoint kitchen;
+        public WayPoint portal;
 
         // Start is called before the first frame update
         void Start()
@@ -40,6 +41,15 @@ namespace SixtyMeters.scripts.level
             {
                 queue.Enqueue(wayPoint);
             }
+        }
+        
+        public void QueuePathToPortal(Queue<WayPoint> queue)
+        {
+            foreach (var wayPoint in pathToInn.GetWaypoints(true))
+            {
+                queue.Enqueue(wayPoint);
+            }
+            queue.Enqueue(portal);
         }
     }
 }

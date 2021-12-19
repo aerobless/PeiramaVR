@@ -43,7 +43,45 @@ namespace SixtyMeters.characters.adventurers.scripts
             }
         }
 
+        public void InteractWith(InteractionObject interactionObject, EquipmentSlot slot)
+        {
+            switch (slot)
+            {
+                case EquipmentSlot.RightHand:
+                    _interactionSystem.StartInteraction(FullBodyBipedEffector.RightHand, interactionObject, true);
+                    break;
+                case EquipmentSlot.LeftHand:
+                    _interactionSystem.StartInteraction(FullBodyBipedEffector.LeftHand, interactionObject, true);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(slot), slot, null);
+            }
+        }
+
         public void Drop(EquipmentSlot slot)
+        {
+            StopInteraction(slot);
+            var itemOriginPosition = _itemOriginPositions[slot];
+            var interactionObject = _equippedItems[slot];
+            interactionObject.transform.parent = null;
+            interactionObject.GetComponent<Rigidbody>().isKinematic = false;
+            interactionObject.transform.position = itemOriginPosition;
+            _equippedItems.Remove(slot);
+            _itemOriginPositions.Remove(slot);
+        }
+        
+        public void Drop(EquipmentSlot slot, Transform dropLocation)
+        {
+            StopInteraction(slot);
+            var interactionObject = _equippedItems[slot];
+            interactionObject.transform.parent = null;
+            interactionObject.GetComponent<Rigidbody>().isKinematic = false;
+            interactionObject.transform.position = dropLocation.position;
+            _equippedItems.Remove(slot);
+            _itemOriginPositions.Remove(slot);
+        }
+
+        private void StopInteraction(EquipmentSlot slot)
         {
             switch (slot)
             {
@@ -56,15 +94,8 @@ namespace SixtyMeters.characters.adventurers.scripts
                 default:
                     throw new ArgumentOutOfRangeException(nameof(slot), slot, null);
             }
-            var itemOriginPosition = _itemOriginPositions[slot];
-            var interactionObject = _equippedItems[slot];
-            interactionObject.transform.parent = null;
-            interactionObject.GetComponent<Rigidbody>().isKinematic = false;
-            interactionObject.transform.position = itemOriginPosition;
-            _equippedItems.Remove(slot);
-            _itemOriginPositions.Remove(slot);
         }
-        
+
         public InteractionObject GetInteractionObject(EquipmentSlot slot)
         {
             return _equippedItems[slot];

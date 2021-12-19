@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using RootMotion.Dynamics;
 using RootMotion.FinalIK;
 using SixtyMeters.scripts.ai;
+using SixtyMeters.scripts.helpers.items;
 using SixtyMeters.scripts.helpers.waypoints;
 using SixtyMeters.scripts.items;
 using SixtyMeters.scripts.level;
@@ -25,17 +26,17 @@ namespace SixtyMeters.characters.adventurers.scripts
         private InnLevelManager _innLevelManager;
         private DetectItems _itemDetector;
         private EquipmentManagerV2 _equipmentManager;
+        private InnCustomerStats _innCustomerStats;
 
         private float _nextCheck;
-        private WayPoint _nextWaypoint;
+        private WayPoint _currentWaypoint;
 
-        private InnCustomerState _currentState;
+        public InnCustomerState currentState;
         private InnCustomerState _nextState;
 
-        private readonly Queue<WayPoint> _nextWaypoints = new Queue<WayPoint>();
+        private readonly Queue<WayPoint> _nextWaypoints = new();
 
         private const int LevelDeathFloor = -50;
-        private const float RateLimit = 1;
 
         // Start is called before the first frame update
         void Start()
@@ -44,11 +45,12 @@ namespace SixtyMeters.characters.adventurers.scripts
             _equipmentManager = GetComponent<EquipmentManagerV2>();
             _animator = GetComponentInChildren<Animator>();
             _itemDetector = GetComponentInChildren<DetectItems>();
+            _innCustomerStats = GetComponent<InnCustomerStats>();
             SetupInnLevelManager();
 
             _nextCheck = Time.time;
-            _currentState = InnCustomerState.Idle;
-            _nextState = InnCustomerState.Idle;
+            currentState = InnCustomerState.Idle;
+            ChangeState(InnCustomerState.Idle);
         }
 
         // Update is called once per frame
@@ -67,64 +69,72 @@ namespace SixtyMeters.characters.adventurers.scripts
             }
 
 
-            // AI Logic
-
-            _currentState = _nextState;
-
-            if (_currentState == InnCustomerState.Idle)
+            currentState = _nextState;
+            switch (currentState)
             {
-                //Check if npc should do something new, can probably be moved into idle state later
-                IdleCheck();
+                case InnCustomerState.Idle:
+                    //Check if npc should do something new, can probably be moved into idle state later
+                    IdleCheck();
+                    break;
+                case InnCustomerState.Moving:
+                    Move();
+                    break;
+                case InnCustomerState.SittingInInn:
+                    SittingInInn();
+                    break;
+                case InnCustomerState.ConsumingFood:
+                    ConsumingFood();
+                    break;
+                case InnCustomerState.PayAndLeave:
+                    PayAndLeave();
+                    break;
+                default:
+                    Debug.Log("ERROR: No switch case for " + currentState);
+                    break;
             }
 
-            if (_currentState == InnCustomerState.Moving)
-            {
-                if (WayPointReached(0.6f))
-                {
-                    if (_nextWaypoints.Count == 0)
-                    {
-                        _navMeshAuto = false;
-                        _navMeshAgent.enabled = false; //TODO: remember to re-enable when standing up
-                        transform.LookAt(_nextWaypoint.transform);
-                        puppetMaster.SwitchToKinematicMode();
-                        _animator.SetBool("SitOnBench", true);
+            DestroyAfterFallingOutOfWorld();
 
-                        // Lerp player into seat
-                        var nextWaypointTransform = _nextWaypoint.transform;
-                        StopAllCoroutines();
-                        StartCoroutine(MoveTo(nextWaypointTransform.position, nextWaypointTransform.rotation));
-                        
-                        _nextState = InnCustomerState.SittingInInn;
-                    }
-                    else
-                    {
-                        WalkToTarget(_nextWaypoints.Dequeue());
-                    }
+            if (healthPoints <= 0 && puppetMaster.state != PuppetMaster.State.Dead)
+            {
+                Die();
+            }
+        }
+
+        private void PayAndLeave()
+        {
+            if (NextCheck())
+            {
+                Debug.Log("Paying and leaving");
+                if (_currentWaypoint.GetType() == typeof(WaypointSeat))
+                {
+                    var wayPointSeat = ((WaypointSeat) _currentWaypoint);
+                    //TODO: fixme
+                    //var coinInteractionObj = coinLocation.GetComponent<InteractionObject>();
+                    //_equipmentManager.InteractWith(coinInteractionObj, EquipmentSlot.RightHand);
+                    
+                    _innCustomerStats.PayCoins(3, wayPointSeat.GetCoinLocation().transform);
+                    
+                    _animator.SetBool("SitOnBench", false);
+                    
+                    var exitWaypointTransform = wayPointSeat.exitWaypoint.transform;
+                    MoveTo(exitWaypointTransform.position, exitWaypointTransform.rotation);
+                    
+                    _navMeshAgent.enabled = true;
+                    _navMeshAuto = true;
+                    puppetMaster.SwitchToActiveMode();
+                    
+                    _innLevelManager.QueuePathToPortal(_nextWaypoints);
+
+                    ChangeState(InnCustomerState.Moving);
+                    NextCheckInSeconds(5);
                 }
             }
+        }
 
-            if (_currentState == InnCustomerState.SittingInInn && NextCheck())
-            {
-                var nearbyUsableItem = _itemDetector.GetClosestItemOfType<UsableByNpc>();
-                if (nearbyUsableItem != null && nearbyUsableItem.GetComponent<UsableByNpc>().isEquipped == false)
-                {
-                    var isMug = nearbyUsableItem.GetComponent<Mug>() != null;
-                    var mugIsFull = !nearbyUsableItem.GetComponent<Mug>().IsEmpty();
-                    if (isMug && mugIsFull)
-                    {
-                        var interactionObject = nearbyUsableItem.transform.root.GetComponent<InteractionObject>();
-                        nearbyUsableItem.GetComponent<UsableByNpc>().isEquipped = true; //TODO fixme
-                        
-                        _equipmentManager.Equip(interactionObject, EquipmentSlot.RightHand);
-                        StartCoroutine(ChangeStateInSeconds(InnCustomerState.ConsumingFood, 5));
-                    }
-                    //TODO: add additional items that should be handled here
-                }
-
-                NextCheckInSeconds(1);
-            }
-
-            if (_currentState == InnCustomerState.ConsumingFood && NextCheck())
+        private void ConsumingFood()
+        {
+            if (NextCheck())
             {
                 //TODO: handle drinking vs. eating
                 if (!_animator.GetBool("Drink"))
@@ -137,12 +147,26 @@ namespace SixtyMeters.characters.adventurers.scripts
                 }
                 else
                 {
-                    var mug = _equipmentManager.GetInteractionObject(EquipmentSlot.RightHand).GetComponentInChildren<Mug>();
+                    var mug = _equipmentManager.GetInteractionObject(EquipmentSlot.RightHand)
+                        .GetComponentInChildren<Mug>();
+                    
                     mug.DrinkFromMug();
-                    if (mug.IsEmpty())
+                    _innCustomerStats.Drink(10);
+                    
+                    if (mug.IsEmpty() || !_innCustomerStats.IsThirsty())
                     {
                         _animator.SetBool("Drink", false);
-                        _equipmentManager.Drop(EquipmentSlot.RightHand);
+                        if (_currentWaypoint.GetType() == typeof(WaypointSeat))
+                        {
+                            var mugDropLocation = ((WaypointSeat) _currentWaypoint).GetMugLocation();
+                            _equipmentManager.Drop(EquipmentSlot.RightHand, mugDropLocation.transform);
+                            Debug.Log("drop in spec. location");
+                        }
+                        else
+                        {
+                            _equipmentManager.Drop(EquipmentSlot.RightHand);
+                        }
+
                         mug.GetComponent<UsableByNpc>().isEquipped = false; //TODO fixme
                         StartCoroutine(ChangeStateInSeconds(InnCustomerState.SittingInInn, 5));
                         NextCheckInSeconds(10);
@@ -153,12 +177,71 @@ namespace SixtyMeters.characters.adventurers.scripts
                     }
                 }
             }
+        }
 
-            DestroyAfterFallingOutOfWorld();
-
-            if (healthPoints <= 0 && puppetMaster.state != PuppetMaster.State.Dead)
+        private void SittingInInn()
+        {
+            if (NextCheck())
             {
-                Die();
+                if (!_innCustomerStats.IsThirsty() && !_innCustomerStats.IsHungry())
+                {
+                    ChangeState(InnCustomerState.PayAndLeave);
+                }
+
+                var nearbyUsableItem = _itemDetector.GetClosestItemOfType<UsableByNpc>();
+                if (nearbyUsableItem != null && nearbyUsableItem.GetComponent<UsableByNpc>().isEquipped == false)
+                {
+                    var isMug = nearbyUsableItem.GetComponent<Mug>() != null;
+                    var mugIsFull = !nearbyUsableItem.GetComponent<Mug>().IsEmpty();
+                    if (isMug && mugIsFull && _innCustomerStats.IsThirsty())
+                    {
+                        var interactionObject = nearbyUsableItem.transform.root.GetComponent<InteractionObject>();
+                        nearbyUsableItem.GetComponent<UsableByNpc>().isEquipped = true; //TODO fixme
+
+                        _equipmentManager.Equip(interactionObject, EquipmentSlot.RightHand);
+                        StartCoroutine(ChangeStateInSeconds(InnCustomerState.ConsumingFood, 2));
+                    }
+                    //TODO: add additional items that should be handled here
+                }
+
+                NextCheckInSeconds(1);
+            }
+        }
+
+        private void Move()
+        {
+            if (WayPointReached(0.6f))
+            {
+                if (_nextWaypoints.Count > 0)
+                {
+                    WalkToTarget(_nextWaypoints.Dequeue());
+                }
+                else
+                {
+                    if (_currentWaypoint && _currentWaypoint.destination == WayPointDestination.Seat)
+                    {
+                        _navMeshAuto = false;
+                        _navMeshAgent.enabled = false; //TODO: remember to re-enable when standing up
+                        transform.LookAt(_currentWaypoint.transform);
+                        puppetMaster.SwitchToKinematicMode();
+                        _animator.SetBool("SitOnBench", true);
+
+                        // Lerp player into seat
+                        var nextWaypointTransform = _currentWaypoint.transform;
+                        StopAllCoroutines();
+                        StartCoroutine(MoveTo(nextWaypointTransform.position, nextWaypointTransform.rotation));
+
+                        ChangeState(InnCustomerState.SittingInInn);
+                    } else if (_currentWaypoint && _currentWaypoint.destination == WayPointDestination.Portal)
+                    {
+                        //TODO: enable portal if it's deactivated
+                        Destroy(gameObject, 1);
+                    }
+                    else
+                    {
+                        ChangeState(InnCustomerState.Idle);
+                    }
+                }
             }
         }
 
@@ -175,21 +258,27 @@ namespace SixtyMeters.characters.adventurers.scripts
         private IEnumerator ChangeStateInSeconds(InnCustomerState nextState, float seconds)
         {
             yield return new WaitForSeconds(seconds);
+            ChangeState(nextState);
+        }
+
+        private void ChangeState(InnCustomerState nextState)
+        {
+            Debug.Log("Changing from state " + currentState + " to " + _nextState);
             _nextState = nextState;
         }
 
         private void IdleCheck()
         {
-            if (NextCheck() && _currentState == InnCustomerState.Idle)
+            if (NextCheck() && currentState == InnCustomerState.Idle)
             {
-                NextCheckInSeconds(30);
+                NextCheckInSeconds(10);
                 FindPlaceToSit();
             }
         }
 
         private void FindPlaceToSit()
         {
-            _nextState = InnCustomerState.Moving;
+            ChangeState(InnCustomerState.Moving);
 
             //TODO: logic to choose a seat
             //TODO: re-enable inn path
@@ -200,16 +289,16 @@ namespace SixtyMeters.characters.adventurers.scripts
 
         private void WalkToTarget(WayPoint wayPoint)
         {
-            _nextWaypoint = wayPoint;
-            _navMeshAgent.SetDestination(_nextWaypoint.transform.position);
+            _currentWaypoint = wayPoint;
+            _navMeshAgent.SetDestination(_currentWaypoint.transform.position);
         }
 
 
         private bool WayPointReached(float distance)
         {
-            if (_nextWaypoint != null)
+            if (_currentWaypoint != null)
             {
-                return Vector3.Distance(transform.position, _nextWaypoint.transform.position) <= distance;
+                return Vector3.Distance(transform.position, _currentWaypoint.transform.position) <= distance;
             }
 
             return true;
@@ -238,10 +327,21 @@ namespace SixtyMeters.characters.adventurers.scripts
             Debug.Log("Inn Customer died but it doesn't support death... pls fix");
             puppetMaster.state = PuppetMaster.State.Dead;
         }
-        
+
+        public void RecoverAfterFall()
+        {
+            if (currentState == InnCustomerState.Moving && _currentWaypoint)
+            {
+                WalkToTarget(_currentWaypoint);
+            }
+            else
+            {
+                ChangeState(InnCustomerState.Idle);
+            }
+        }
+
         IEnumerator MoveTo(Vector3 destPos, Quaternion destRot)
         {
-            Debug.Log("seat lerp start");
             var startPos = transform.position;
             var startRot = transform.rotation;
             float fraction = 0;
@@ -253,7 +353,6 @@ namespace SixtyMeters.characters.adventurers.scripts
                 transform.rotation = Quaternion.Lerp(startRot, destRot, fraction);
                 yield return null;
             }
-            Debug.Log("seat lerp end");
         }
     }
 }

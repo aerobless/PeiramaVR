@@ -2,10 +2,10 @@
 {
     public enum InnCustomerState
     {
-        FollowPath,
         Idle,
         Moving,
         SittingInInn,
-        ConsumingFood
+        ConsumingFood,
+        PayAndLeave
     }
 }

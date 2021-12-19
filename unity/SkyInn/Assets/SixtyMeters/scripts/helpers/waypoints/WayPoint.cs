@@ -9,6 +9,7 @@ namespace SixtyMeters.scripts.helpers.waypoints
     {
 
         public bool hasDirection = false;
+        public WayPointDestination destination;
         
         // Start is called before the first frame update
         void Start()
