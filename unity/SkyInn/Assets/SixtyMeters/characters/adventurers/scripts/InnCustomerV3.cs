@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using RootMotion.Dynamics;
 using RootMotion.FinalIK;
 using SixtyMeters.scripts.ai;
-using SixtyMeters.scripts.helpers.items;
 using SixtyMeters.scripts.helpers.waypoints;
 using SixtyMeters.scripts.items;
 using SixtyMeters.scripts.level;

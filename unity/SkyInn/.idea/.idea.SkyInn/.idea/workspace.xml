@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a9e706a-6ee6-49d3-98cd-beff8ee95558" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/items.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/items/ItemLocation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/items/ItemLocation.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WayPointDestination.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WayPointDestination.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/Active Ragdoll Adventurer Root.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/Active Ragdoll Adventurer Root.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/EquipmentManagerV2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/EquipmentManagerV2.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/helpers/Waypoint Seat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/helpers/Waypoint Seat.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/portal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/prefabs/portal.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/ai/InnCustomerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/ai/InnCustomerState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WayPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WayPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WaypointSeat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WaypointSeat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/NavMesh.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/InnLevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/InnLevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/PlayerStatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/PlayerStatManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +31,6 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.5/Runtime/VisualScripting.Core/Utilities/ComponentHolderProtocol.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/bb/5716efb1/WaitForSeconds.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/40614DA1-0714-468E-86F0-CDEC1DBE96F5/1b/3efccde7/NavMeshAgent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/29A6C194-5F57-4474-95FC-AD42118554C7/95/d571a6e2/Stack`1.cs" root0="FORCE_HIGHLIGHTING" />
@@ -49,6 +43,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/33/ebd60272/Time.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4D9F1448-54E4-4B48-B32B-352F99EC3435/b1/ae866a10/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/75/0da5d457/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/ShopItemEntry.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/weapons/MeleeWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/portal/scripts/PortalBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/9c/d01781cd/Dictionary`2.cs" root0="FORCE_HIGHLIGHTING" />
@@ -57,21 +52,18 @@
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/PanelBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TextMeshProUGUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/ShopPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/SettingsPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/29A6C194-5F57-4474-95FC-AD42118554C7/37/36e82bcd/Queue`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5DB060C2-E1A7-4066-83B7-D65D782D6ADE/8e/9cd1f017/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5DB060C2-E1A7-4066-83B7-D65D782D6ADE/8e/9cd1f017/Object.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.polybrush@1.1.2/Editor/Interface/PolybrushEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD50157E-E00E-45CD-B3C8-BD67012F8804/c7/5c829f94/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMPro_Private.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/ToggleBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A59C552-C85F-43A9-BCAA-F39EB0BF8B0D/06/cb1e5030/Vector3.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/DefaultItemBehavior.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/items/DefaultItemBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/HelperFunctions.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WayPointPath.cs" />
-      <option value="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/Scripts/Behaviours/BehaviourPuppet.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAnimator.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/mug/scripts/SuperMug.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/monsters/goblins/ai/GoblinAI.cs" />
@@ -96,9 +88,7 @@
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/IMissionObjective.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/objectives/CleanInn.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/scripts/MoneyJar.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/PlayerStatManager.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/coin jar/scripts/CoinJar.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionManager.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/MissionsPanel.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionObjective.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/Cleanable.cs" />
@@ -114,10 +104,17 @@
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/EquipmentManagerV2.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerStats.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WaypointSeat.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/InnLevelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WayPoint.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WayPointDestination.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/ShopItem.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/InnLevelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/ShopPanel.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/shop/ShopManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/PlayerStatManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/shop/ShopItem.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/ShopItemEntry.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zcr87VFN8vZqfgxDRU27FPSzeJ" />
@@ -194,7 +191,8 @@
       <workItem from="1639337585825" duration="5868000" />
       <workItem from="1639424819470" duration="3968000" />
       <workItem from="1639687199952" duration="1921000" />
-      <workItem from="1639918565553" duration="10258000" />
+      <workItem from="1639918565553" duration="10734000" />
+      <workItem from="1640203216945" duration="2543000" />
     </task>
     <servers />
   </component>

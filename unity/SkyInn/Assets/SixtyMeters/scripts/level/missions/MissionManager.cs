@@ -22,7 +22,6 @@ namespace SixtyMeters.scripts.level.missions
         private void LoadMissions()
         {
             _missions = new List<Mission>(GetComponentsInChildren<Mission>());
-            Debug.Log(_missions.Count+"ddd");
         }
 
         public List<Mission> GetAllMissions()

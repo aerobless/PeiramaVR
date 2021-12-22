@@ -13,6 +13,7 @@ namespace SixtyMeters.scripts.level
         public WayPointPath pathToInn;
         public WayPoint kitchen;
         public WayPoint portal;
+        public WayPoint deliveryWaypoint;
 
         // Start is called before the first frame update
         void Start()

@@ -10,5 +10,13 @@ namespace SixtyMeters.scripts.level
         {
             coinsInJar += amount;
         }
+
+        public bool VerifyAndCharge(int amount)
+        {
+            if (coinsInJar < amount) return false;
+            
+            coinsInJar -= amount;
+            return true;
+        }
     }
 }
