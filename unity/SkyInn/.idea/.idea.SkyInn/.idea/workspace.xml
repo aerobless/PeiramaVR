@@ -3,16 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5a9e706a-6ee6-49d3-98cd-beff8ee95558" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyInn/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/OVRBuildConfig.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scenes/SkyInn/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/InnLevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/InnLevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/PlayerStatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/PlayerStatManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,13 +102,13 @@
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/helpers/waypoints/WayPointDestination.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/ShopItem.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/InnLevelManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/missions/MissionManager.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/ShopPanel.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/shop/ShopManager.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/PlayerStatManager.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/scripts/level/shop/ShopItem.cs" />
       <option value="$PROJECT_DIR$/Assets/SixtyMeters/models/ui/pad/scripts/ShopItemEntry.cs" />
+      <option value="$PROJECT_DIR$/Assets/SixtyMeters/characters/adventurers/scripts/InnCustomerV3.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zcr87VFN8vZqfgxDRU27FPSzeJ" />
@@ -193,6 +187,8 @@
       <workItem from="1639687199952" duration="1921000" />
       <workItem from="1639918565553" duration="10734000" />
       <workItem from="1640203216945" duration="2543000" />
+      <workItem from="1640609471458" duration="1521000" />
+      <workItem from="1640611885792" duration="3236000" />
     </task>
     <servers />
   </component>
