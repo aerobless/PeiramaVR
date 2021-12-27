@@ -8,9 +8,12 @@ namespace SixtyMeters.models.kitchen.food.scripts
 
         public float cookTimeSec = 30;
         public bool canBurn = true;
+        public bool isCooking = false;
 
-        public bool _isCooking = false;
-        
+        public AudioClip cookingSound;
+
+        private AudioSource _audioSource;
+
         private float _timeCooked = 0;
         private static readonly int CookRate = Shader.PropertyToID("_cookRate");
         private static readonly int BurnRate = Shader.PropertyToID("_burnRate");
@@ -19,12 +22,14 @@ namespace SixtyMeters.models.kitchen.food.scripts
         void Start()
         {
             _renderer = GetComponent<Renderer>();
+            _audioSource = GetComponent<AudioSource>();
+            _audioSource.clip = cookingSound;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (_isCooking)
+            if (isCooking)
             {
                 var cookValue = Mathf.Lerp(0, 1, _timeCooked / cookTimeSec);
                 if (cookValue > 1)
@@ -49,12 +54,14 @@ namespace SixtyMeters.models.kitchen.food.scripts
 
         public void StartCooking()
         {
-            _isCooking = true;
+            isCooking = true;
+            _audioSource.Play();
         }
         
         public void StopCooking()
         {
-            _isCooking = false;
+            isCooking = false;
+            _audioSource.Stop();
         }
     }
 }
