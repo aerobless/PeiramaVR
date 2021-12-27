@@ -21,7 +21,10 @@ namespace SixtyMeters.characters.adventurers.scripts
         private NavMeshAgent _navMeshAgent;
         private bool _navMeshAuto = true;
         private Animator _animator;
+        
         private InnLevelManager _innLevelManager;
+        private NpcManager _npcManager;
+        
         private DetectItems _itemDetector;
         private EquipmentManagerV2 _equipmentManager;
         private InnCustomerStats _innCustomerStats;
@@ -244,6 +247,7 @@ namespace SixtyMeters.characters.adventurers.scripts
                 else if (_currentWaypoint && _currentWaypoint.destination == WayPointDestination.Portal)
                 {
                     //TODO: enable portal if it's deactivated
+                    _npcManager.DeregisterInnCustomer(this);
                     Destroy(transform.parent.gameObject, 1);
                 }
                 else
@@ -333,12 +337,19 @@ namespace SixtyMeters.characters.adventurers.scripts
             {
                 Debug.Log("InnCustomerAI needs an InnLevelManager to work, it wasn't found in the scene!");
             }
+            _npcManager = FindObjectOfType<NpcManager>();
+            if (_innLevelManager == null)
+            {
+                Debug.Log("InnCustomerAI needs an NpcManager to work, it wasn't found in the scene!");
+            }
+            _npcManager.RegisterInnCustomer(this);
         }
 
         private void DestroyAfterFallingOutOfWorld()
         {
             if (transform.position.y < LevelDeathFloor)
             {
+                _npcManager.DeregisterInnCustomer(this);
                 Destroy(transform.parent.gameObject);
             }
         }

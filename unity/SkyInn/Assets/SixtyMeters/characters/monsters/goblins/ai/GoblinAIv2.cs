@@ -31,6 +31,7 @@ namespace SixtyMeters.characters.monsters.goblins.ai
         private NavMeshAgent _navMeshAgent;
         private Animator _animator;
         private InnLevelManager _innLevelManager;
+        private NpcManager _npcManager;
         private GameObject _player;
 
         private WayPoint _targetWaypoint;
@@ -50,7 +51,7 @@ namespace SixtyMeters.characters.monsters.goblins.ai
             _navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
             _animator = gameObject.GetComponent<Animator>();
             _player = GameObject.Find("PlayerController");
-            SetupInnLevelManager();
+            SetupLevelManagers();
 
             headGrab.HandGrabbed.AddListener(OnHandGrabbed);
             headGrab.HandReleased.AddListener(OnHandReleased);
@@ -95,6 +96,7 @@ namespace SixtyMeters.characters.monsters.goblins.ai
         {
             if (transform.position.y < LevelDeathFloor)
             {
+                _npcManager.DeregisterGoblin(this);
                 Destroy(transform.parent.gameObject);
             }
         }
@@ -103,6 +105,7 @@ namespace SixtyMeters.characters.monsters.goblins.ai
         {
             audioSource.PlayOneShot(Helpers.GETRandomFromList(deathSounds));
             puppetMaster.state = PuppetMaster.State.Dead;
+            _npcManager.DeregisterGoblin(this);
         }
 
         public void TakeDamage(int damage)
@@ -143,13 +146,20 @@ namespace SixtyMeters.characters.monsters.goblins.ai
             return Vector3.Distance(transform.position, _player.transform.position);
         }
 
-        private void SetupInnLevelManager()
+        private void SetupLevelManagers()
         {
             _innLevelManager = FindObjectOfType<InnLevelManager>();
             if (_innLevelManager == null)
             {
                 Debug.Log("GoblinAI needs an InnLevelManager to work, it wasn't found in the scene!");
             }
+            
+            _npcManager = FindObjectOfType<NpcManager>();
+            if (_innLevelManager == null)
+            {
+                Debug.Log("GoblinAI needs an NpcManager to work, it wasn't found in the scene!");
+            }
+            _npcManager.RegisterGoblin(this);
         }
 
         private void GoToKitchen()

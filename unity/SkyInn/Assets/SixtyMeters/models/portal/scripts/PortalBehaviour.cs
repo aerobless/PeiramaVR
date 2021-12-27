@@ -31,11 +31,6 @@ namespace SixtyMeters.models.portal.scripts
 
         public GameObject spawnPoint;
         
-        private int _friendlyNpcVisitors = 0;
-        private int _goblinCount = 0;
-        private const int MaxFriendlyVisitors = 1;
-        private const int MaxGoblins = 10;
-        private const float RateLimit = 1;
         private float _nextSpawnCreatureCheck;
 
         private PortalLocation _selectedPortalLocation;
@@ -45,47 +40,25 @@ namespace SixtyMeters.models.portal.scripts
         {
             _renderer = GetComponent<Renderer>();
             gameObject.SetActive(false);
+            _selectedPortalLocation = PortalLocation.None;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (_selectedPortalLocation != PortalLocation.None && Time.time > _nextSpawnCreatureCheck)
-            {
-                switch (_selectedPortalLocation)
-                {
-                    case PortalLocation.GoblinCave:
-                        CheckAndSpawnGoblin();
-                        break;
-                    case PortalLocation.HumanCity:
-                        CheckAndSpawnFriendlyVisitor();
-                        break;
-                }
-                
-                _nextSpawnCreatureCheck = Time.time + RateLimit;
-            }
-        
+
         }
 
-        private void CheckAndSpawnFriendlyVisitor()
+        public void SpawnInnCustomer()
         {
-            if (_friendlyNpcVisitors < MaxFriendlyVisitors)
-            {
-                var visitor = Helpers.GETRandomFromList(spawnableFriendlyVisitors);
-                Instantiate(visitor, spawnPoint.transform.position, spawnPoint.transform.rotation);
-                ++_friendlyNpcVisitors;
-       
-            }
+            var visitor = Helpers.GETRandomFromList(spawnableFriendlyVisitors);
+            Instantiate(visitor, spawnPoint.transform.position, spawnPoint.transform.rotation);
         }
-        
-        private void CheckAndSpawnGoblin()
+
+        public void SpawnGoblin()
         {
-            if (_goblinCount < MaxGoblins)
-            {
-                var goblin = Helpers.GETRandomFromList(spawnableGoblins);
-                Instantiate(goblin, spawnPoint.transform.position, spawnPoint.transform.rotation);
-                ++_goblinCount;    //TODO: this should be counted elsewhere.. or be decremented when goblins die
-            }
+            var goblin = Helpers.GETRandomFromList(spawnableGoblins);
+            Instantiate(goblin, spawnPoint.transform.position, spawnPoint.transform.rotation);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -130,7 +103,10 @@ namespace SixtyMeters.models.portal.scripts
             blackBackground.Stop();
             _selectedPortalLocation = PortalLocation.None;
         }
-        
-        
+
+        public PortalLocation GetPortalLocation()
+        {
+            return _selectedPortalLocation;
+        }
     }
 }
