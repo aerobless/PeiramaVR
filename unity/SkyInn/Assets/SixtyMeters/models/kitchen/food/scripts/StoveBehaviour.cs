@@ -19,7 +19,7 @@ namespace SixtyMeters.models.kitchen.food.scripts
 
         private void OnTriggerEnter(Collider other)
         {
-            var food = other.GetComponent<Cookable>();
+            var food = other.GetComponent<FoodItem>();
             if (food)
             {
                 food.StartCooking();
@@ -28,7 +28,7 @@ namespace SixtyMeters.models.kitchen.food.scripts
 
         private void OnTriggerExit(Collider other)
         {
-            var food = other.GetComponent<Cookable>();
+            var food = other.GetComponent<FoodItem>();
             if (food)
             {
                 food.StopCooking();

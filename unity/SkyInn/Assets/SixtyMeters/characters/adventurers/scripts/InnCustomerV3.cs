@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using RootMotion.Dynamics;
@@ -21,10 +22,10 @@ namespace SixtyMeters.characters.adventurers.scripts
         private NavMeshAgent _navMeshAgent;
         private bool _navMeshAuto = true;
         private Animator _animator;
-        
+
         private InnLevelManager _innLevelManager;
         private NpcManager _npcManager;
-        
+
         private DetectItems _itemDetector;
         private EquipmentManagerV2 _equipmentManager;
         private InnCustomerStats _innCustomerStats;
@@ -190,22 +191,47 @@ namespace SixtyMeters.characters.adventurers.scripts
                 }
 
                 var nearbyUsableItem = _itemDetector.GetClosestItemOfType<UsableByNpc>();
-                if (nearbyUsableItem != null && nearbyUsableItem.GetComponent<UsableByNpc>().isEquipped == false)
+                if (nearbyUsableItem)
                 {
-                    var isMug = nearbyUsableItem.GetComponent<Mug>() != null;
-                    var mugIsFull = !nearbyUsableItem.GetComponent<Mug>().IsEmpty();
-                    if (isMug && mugIsFull && _innCustomerStats.IsThirsty())
+                    var npcItem = nearbyUsableItem.GetComponent<UsableByNpc>();
+                    if (npcItem.isEquipped == false)
                     {
-                        var interactionObject = nearbyUsableItem.transform.root.GetComponent<InteractionObject>();
-                        nearbyUsableItem.GetComponent<UsableByNpc>().isEquipped = true; //TODO fixme
-
-                        _equipmentManager.Equip(interactionObject, EquipmentSlot.RightHand);
-                        StartCoroutine(ChangeStateInSeconds(InnCustomerState.ConsumingFood, 2));
+                        switch (npcItem.itemtype)
+                        {
+                            case NpcItemType.None:
+                                break;
+                            case NpcItemType.Mug:
+                                HandleMug(nearbyUsableItem, npcItem);
+                                break;
+                            case NpcItemType.Food:
+                                break;
+                        }
                     }
-                    //TODO: add additional items that should be handled here
+                    NextCheckInSeconds(3);
                 }
+                else
+                {
+                    NextCheckInSeconds(1);
+                }
+            }
+        }
 
-                NextCheckInSeconds(1);
+        private void HandleMug(GameObject go, UsableByNpc npcItem)
+        {
+            var mug = go.GetComponent<Mug>();
+            if (!mug)
+            {
+                Debug.LogError("GameObject reporting as a mug does not contain Mug component!");
+                return;
+            }
+
+            if (!mug.IsEmpty() && _innCustomerStats.IsThirsty())
+            {
+                var interactionObject = go.transform.root.GetComponent<InteractionObject>();
+                npcItem.isEquipped = true;
+
+                _equipmentManager.Equip(interactionObject, EquipmentSlot.RightHand);
+                StartCoroutine(ChangeStateInSeconds(InnCustomerState.ConsumingFood, 2));
             }
         }
 
@@ -337,11 +363,13 @@ namespace SixtyMeters.characters.adventurers.scripts
             {
                 Debug.Log("InnCustomerAI needs an InnLevelManager to work, it wasn't found in the scene!");
             }
+
             _npcManager = FindObjectOfType<NpcManager>();
             if (_innLevelManager == null)
             {
                 Debug.Log("InnCustomerAI needs an NpcManager to work, it wasn't found in the scene!");
             }
+
             _npcManager.RegisterInnCustomer(this);
         }
 

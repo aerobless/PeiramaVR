@@ -10,6 +10,8 @@ namespace SixtyMeters.scripts.items
 
         public bool isEquipped = false;
 
+        public NpcItemType itemtype = NpcItemType.None;
+
         // Start is called before the first frame update
         void Start()
         {
